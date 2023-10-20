@@ -1,0 +1,21 @@
+ion-card {
+  max-width: 600px;
+  --background: var(--ion-color-primary);
+  * {
+    color: var(--ion-color-primary-contrast);
+  }
+  ion-card-header {
+    > div {
+      display: flex;
+      align-items: center;
+      column-gap: 2rem;
+    }
+  }
+  ion-footer {
+    ion-button {
+      ion-icon {
+        --padding-start: 1rem;
+      }
+    }
+  }
+}
