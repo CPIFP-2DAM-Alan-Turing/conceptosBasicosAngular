@@ -17,4 +17,11 @@ export class HomePage {
     this.router.navigate(['/about']);
   }
 
+    /**
+   * Navigate to concerts page
+   */
+    concerts() {
+      this.router.navigate(['/concerts']);
+    }
+
 }
