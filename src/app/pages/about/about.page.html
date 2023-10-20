@@ -7,5 +7,8 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <app-about-us-card></app-about-us-card>
+  <app-about-us-card
+    *ngFor="let person of persons"
+    [person]="person"
+  ></app-about-us-card>
 </ion-content>

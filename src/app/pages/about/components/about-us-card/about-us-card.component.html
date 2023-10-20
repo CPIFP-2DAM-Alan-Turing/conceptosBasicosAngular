@@ -2,39 +2,36 @@
   <ion-card-header>
     <div aria-hidden="true">
       <ion-avatar>
-        <img
-          alt="Fotografía de Marina Ruiz"
-          src="assets/images/about/marina-ruiz-avatar.jpg"
-        />
+        <img [alt]="person?.imageAlt" [src]="person?.image" />
       </ion-avatar>
       <div>
-        <ion-card-subtitle>Frontend Developer Jr.</ion-card-subtitle>
-        <ion-card-title>Marina Ruiz Artacho</ion-card-title>
+        <ion-card-subtitle>{{ person?.jobPosition }}</ion-card-subtitle>
+        <ion-card-title>
+          {{ person?.firstName }} {{ person?.lastName }}
+        </ion-card-title>
       </div>
     </div>
   </ion-card-header>
 
   <ion-card-content>
-    Me desenvuelvo bien en Java, HTML, CSS, JavaScript y SQL. Tengo
-    conocimientos de PHP, Python y C. He utilizado tecnologias como Android,
-    AWS, mongoDB, Node.js y Angular.
+    {{ person?.description }}
   </ion-card-content>
 
   <ion-footer>
-    <ion-button fill="clear" aria-label="Visitar el LinkedIn de Marina Ruiz">
-      <ion-icon
-        slot="start"
-        aria-hidden="true"
-        name="logo-linkedin"
-      ></ion-icon>
+    <ion-button
+      [href]="person?.linkedinUrl"
+      fill="clear"
+      aria-label="Visitar el LinkedIn"
+    >
+      <ion-icon slot="start" aria-hidden="true" name="logo-linkedin"></ion-icon>
       LinkedIn
     </ion-button>
-    <ion-button fill="clear" aria-label="Visitar el GitHub de Marina Ruiz">
-      <ion-icon
-        slot="start"
-        aria-hidden="true"
-        name="logo-github"
-      ></ion-icon>
+    <ion-button
+      [href]="person?.githubUrl"
+      fill="clear"
+      aria-label="Visitar el GitHub"
+    >
+      <ion-icon slot="start" aria-hidden="true" name="logo-github"></ion-icon>
       GitHub
     </ion-button>
   </ion-footer>
