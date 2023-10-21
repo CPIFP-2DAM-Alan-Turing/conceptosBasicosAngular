@@ -13,4 +13,7 @@ export class ConcertInfoComponent implements OnInit {
 
     ngOnInit() { }
 
+    changeFav() {
+        this.concert!.fav = !this.concert?.fav;
+    }
 }
