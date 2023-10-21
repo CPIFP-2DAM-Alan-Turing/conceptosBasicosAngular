@@ -8,5 +8,5 @@
 </ion-header>
 
 <ion-content>
-   <!--  <app-concerts>Estos son los conciertos</app-concerts> -->
+    <app-concert-info *ngFor="let concert of concertService.concerts$|async">Estos son los conciertos</app-concert-info>
 </ion-content>

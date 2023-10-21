@@ -7,14 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ConcertsPageRoutingModule } from './concerts-routing.module';
 
 import { ConcertsPage } from './concerts.page';
+import { ConcertInfoComponent } from './concert-info/concert-info.component';
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         IonicModule,
-        ConcertsPageRoutingModule
+        ConcertsPageRoutingModule,
     ],
-    declarations: [ConcertsPage]
+    declarations: [ConcertsPage, ConcertInfoComponent]
 })
 export class ConcertsPageModule { }
