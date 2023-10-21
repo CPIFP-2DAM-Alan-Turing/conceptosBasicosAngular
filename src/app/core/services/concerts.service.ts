@@ -19,7 +19,7 @@ export class ConcertsService {
                 this._concerts.next(concerts);
                 observer.next(concerts);
                 observer.complete();
-            }, 1000);
+            }, 2000);
 
         });
     }

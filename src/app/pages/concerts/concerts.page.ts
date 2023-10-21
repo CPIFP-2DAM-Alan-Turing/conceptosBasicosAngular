@@ -8,12 +8,17 @@ import { ConcertsService } from 'src/app/core/services/concerts.service';
     styleUrls: ['./concerts.page.scss'],
 })
 export class ConcertsPage implements OnInit {
+    loading = true;
 
-    constructor(private router: Router,
+    constructor(
+        private router: Router,
         public concertService: ConcertsService) { }
 
     ngOnInit() {
-        this.concertService.getAll().subscribe();
+        this.loading = true;
+        this.concertService.getAll().subscribe((c) => {
+            this.loading = false;
+        });
     }
 
     /**
