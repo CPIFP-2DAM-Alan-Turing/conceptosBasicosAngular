@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Concert } from 'src/app/core/models/concert.model';
 import { ConcertsService } from 'src/app/core/services/concerts.service';
 
 @Component({
@@ -26,6 +27,10 @@ export class ConcertsPage implements OnInit {
     */
     home() {
         this.router.navigate(['/home']);
+    }
+
+    onCardClicked(concert: Concert) {
+        console.log(concert);
     }
 
 }
