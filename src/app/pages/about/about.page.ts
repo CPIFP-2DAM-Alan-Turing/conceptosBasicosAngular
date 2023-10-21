@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PERSONS_ABOUT } from 'src/app/core/models/person-about-data';
+import { PERSONS_ABOUT } from 'src/app/core/data/person-about-data';
 import { PersonAbout } from 'src/app/core/models/person-about.model';
 
 @Component({
