@@ -1,4 +1,6 @@
-export var concertData = [
+import { ConcertData } from "../models/concert-data";
+
+export var concertData:ConcertData[] = [
     {
         data: [
             {

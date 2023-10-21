@@ -1,4 +1,6 @@
 export interface Concert {
+    id: number,
+    fav: boolean,
     context: string,
     type: string,
     description: string,
@@ -23,7 +25,7 @@ export interface Concert {
         name: string
     },
     name: string,
-    performer: [],
+    performer: any[],
     startDate: string
 }
 
