@@ -5,7 +5,7 @@ export var concertsData: ConcertInfoData[] = [
         data: [
             {
                 id: 1,
-                fav: false,
+                fav: true,
                 context: "http://schema.org",
                 type: "MusicEvent",
                 description: "Dynamic chart 2022 at Hollywood Bowl at 2022-12-31T10:00:00-0800",
