@@ -4,7 +4,7 @@
         <ion-card-title>{{ concert?.name}}</ion-card-title>
         <ion-card-subtitle>{{ concert?.endDate }}</ion-card-subtitle>
     </ion-card-header>
-    <ion-button (click)="changeFav()" fill="clear">
+    <ion-button (click)="changeFav($event)" fill="clear">
         <ion-icon *ngIf="concert?.fav" color="warning" name="bookmark" size="large" ></ion-icon>
         <ion-icon *ngIf="!concert?.fav" color="secondary" name="bookmark" size="large"></ion-icon>
     </ion-button>

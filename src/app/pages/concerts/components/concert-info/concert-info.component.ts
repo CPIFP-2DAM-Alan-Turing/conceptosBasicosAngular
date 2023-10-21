@@ -14,10 +14,11 @@ export class ConcertInfoComponent implements OnInit {
 
     ngOnInit() { }
 
-    changeFav() {
+    changeFav(event:any) {
         this.concert!.fav = !this.concert?.fav;
+        event.stopPropagation();
     }
-    
+
     onCardClick(event:any) {
         this.onCardClicked.emit();
         event.stopPropagation();
