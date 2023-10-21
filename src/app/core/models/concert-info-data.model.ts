@@ -1,6 +1,6 @@
 import { Concert } from "./concert.model";
 
-export interface ConcertData {
+export interface ConcertInfoData {
     data: Concert[];
     page: string;
 }

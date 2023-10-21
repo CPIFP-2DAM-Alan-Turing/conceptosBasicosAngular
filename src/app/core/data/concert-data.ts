@@ -1,6 +1,6 @@
-import { ConcertData } from "../models/concert-data";
+import { ConcertInfoData } from "../models/concert-info-data.model";
 
-export var concertData:ConcertData[] = [
+export var concertsData: ConcertInfoData[] = [
     {
         data: [
             {
