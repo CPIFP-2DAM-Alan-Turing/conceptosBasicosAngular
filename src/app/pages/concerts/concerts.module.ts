@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ConcertsPageRoutingModule } from './concerts-routing.module';
 
 import { ConcertsPage } from './concerts.page';
-import { ConcertInfoComponent } from './concert-info/concert-info.component';
+import { ConcertInfoComponent } from './components/concert-info/concert-info.component';
 
 @NgModule({
     imports: [

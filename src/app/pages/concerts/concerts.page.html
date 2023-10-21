@@ -7,8 +7,8 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
-    <app-concert-info *ngFor="let concert of concertService.concerts$|async">Estos son los conciertos</app-concert-info>
-</ion-content>
+<ion-row class="cards">
+    <app-concert-info *ngFor="let concert of concertService.concerts$|async" [concert]="concert"></app-concert-info>
+</ion-row>
 
 <ion-loading [isOpen]="loading" spinner="bubbles" message="Cargando..."></ion-loading>
