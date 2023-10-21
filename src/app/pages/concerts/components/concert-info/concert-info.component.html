@@ -1,4 +1,4 @@
-<ion-card>
+<ion-card button (click)="onCardClick($event)">
     <img alt="Image of {{ concert?.name}}" [src]="concert?.image" />
     <ion-card-header>
         <ion-card-title>{{ concert?.name}}</ion-card-title>

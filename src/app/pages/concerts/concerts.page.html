@@ -1,14 +1,22 @@
 <ion-header [translucent]="true">
-    <ion-toolbar>
-        <ion-title>Conciertos</ion-title>
-        <ion-buttons slot="end">
-            <ion-button (click)="home()">Inicio</ion-button>
-        </ion-buttons>
-    </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Conciertos</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="home()">Inicio</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 <ion-row class="cards">
-    <app-concert-info *ngFor="let concert of concertService.concerts$|async" [concert]="concert"></app-concert-info>
+  <app-concert-info
+    *ngFor="let concert of concertService.concerts$|async"
+    [concert]="concert"
+    (onCardClicked)="onCardClicked(concert)"
+  ></app-concert-info>
 </ion-row>
 
-<ion-loading [isOpen]="loading" spinner="bubbles" message="Cargando..."></ion-loading>
+<ion-loading
+  [isOpen]="loading"
+  spinner="bubbles"
+  message="Cargando..."
+></ion-loading>
