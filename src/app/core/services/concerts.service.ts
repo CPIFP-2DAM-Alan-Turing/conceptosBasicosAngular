@@ -58,7 +58,7 @@ export class ConcertsService implements CrudConcerts {
         });
     }
     public updateConcert(concert: Concert): Observable<Concert> {
-        console.log("Entra en updateConcert(data: any)");
+        console.log("Entra en updateConcert(cncert: Concert)");
         return new Observable(observer => {
             setTimeout(() => {
                 var _concerts = [...this._concerts.value];
@@ -79,7 +79,21 @@ export class ConcertsService implements CrudConcerts {
     }
     public deleteConcert(id: number): Observable<Concert> {
         console.log("Entra en deleteConcert(id: number)");
-        throw new Error('Method not implemented.');
+        return new Observable(observer => {
+            setTimeout(() => {
+                var _concerts = [...this._concerts.value];
+                var index = _concerts.findIndex(con => con.id == id);
+                if (index < 0)
+                    observer.error(new ConcertNotFoundException());
+                else {
+                    var removedConcert = _concerts[index];
+                    _concerts = [..._concerts.slice(0, index), ..._concerts.slice(index + 1)];
+                    this._concerts.next(_concerts);
+                    observer.next(removedConcert);
+                }
+                observer.complete();
+            }, 500);
+        });
     }
 }
 
