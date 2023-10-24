@@ -16,6 +16,7 @@ interface CrudConcerts {
 export class ConcertsService implements CrudConcerts {
     private _concerts: BehaviorSubject<Concert[]> = new BehaviorSubject<Concert[]>([]);
     public concerts$: Observable<Concert[]> = this._concerts.asObservable();
+    public id = 50; // There are 50 concerts in the initial list
 
     constructor() { }
 
@@ -46,7 +47,15 @@ export class ConcertsService implements CrudConcerts {
     }
     public createConcert(concert: Concert): Observable<Concert> {
         console.log("Entra en createConcert(concert: Concert)");
-        throw new Error('Method not implemented.');
+        return new Observable<Concert>(observer=>{
+            setTimeout(() => {
+              var _concerts = [...this._concerts.value];
+              concert.id = ++this.id;
+              _concerts.push(concert);
+              this._concerts.next(_concerts);
+              observer.next(concert);
+            }, 1000);
+          });
     }
     public updateConcert(data: any): Observable<Concert> {
         console.log("Entra en updateConcert(data: any)");
