@@ -1,13 +1,13 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button color="primary" fill="clear">
+      <ion-button color="primary" fill="clear" (click)="onCancel()">
         <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
     <ion-title> Concierto </ion-title>
     <ion-buttons slot="end">
-      <ion-button color="danger">
+      <ion-button color="danger" (click)="onDelete()">
         <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -88,7 +88,12 @@
   </form>
 </ion-content>
 <ion-footer>
-  <ion-button type="submit" class="ion-padding" expand="full">
+  <ion-button
+    type="submit"
+    (click)="onSubmit()"
+    class="ion-padding"
+    expand="full"
+  >
     Aceptar
   </ion-button>
 </ion-footer>

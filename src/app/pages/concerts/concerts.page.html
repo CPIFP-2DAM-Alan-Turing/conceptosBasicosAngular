@@ -6,14 +6,22 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
-<ion-row class="cards">
-  <app-concert-info
-    *ngFor="let concert of concertService.concerts$|async"
-    [concert]="concert"
-    (onCardClicked)="onCardClicked(concert)"
-  ></app-concert-info>
-</ion-row>
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-around">
+      <app-concert-info
+        *ngFor="let concert of concertService.concerts$|async"
+        [concert]="concert"
+        (onCardClicked)="onCardClicked(concert)"
+      ></app-concert-info>
+    </ion-row>
+  </ion-grid>
+  <ion-fab slot="fixed" horizontal="end" vertical="bottom">
+    <ion-fab-button (click)="onAddConcertClick($event)"> 
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
 
 <ion-loading
   [isOpen]="loading"

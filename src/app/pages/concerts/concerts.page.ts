@@ -1,17 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import { Observable } from 'rxjs';
 import { Concert } from 'src/app/core/models/concert.model';
 import { ConcertsService } from 'src/app/core/services/concerts.service';
 import { ConcertFormComponent } from './components/concert-form/concert-form.component';
 
 interface ConcertsInterface {
-    onFavClicked(id: number): any;
     onCardClicked(concert: Concert): any;
     onUpdate(data: any): any;
     onDeleteClicked(concert: Concert): any;
-    onNewConcertClicked(): any;
+    onAddConcertClick(event: any): any;
 }
 
 @Component({
@@ -42,18 +40,22 @@ export class ConcertsPage implements OnInit, ConcertsInterface {
         this.router.navigate(['/home']);
     }
 
-    onFavClicked(id: number) {
-        throw new Error('Method not implemented.');
-    }
-
     onCardClicked(concert: Concert) {
-        let onDismiss = (data: any) => {
-            // TODO onDismiss: onUpdate() onDeleteClicked()
+        let onDismiss = (res: any) => {
+            switch (res.role) {
+                case "submit":
+                    this.onUpdate(res.data);
+                    break;
+                case "delete":
+                    this.onDeleteClicked(res.data);
+                    break;
+                default:
+            }
         }
         this.presentForm(concert, onDismiss);
     }
 
-    async presentForm(data: Concert, onDismiss: (data: any) => void) {
+    async presentForm(data: Concert | null, onDismiss: (data: any) => void) {
         const form = await this.form.create({
             component: ConcertFormComponent,
             componentProps: {
@@ -68,17 +70,42 @@ export class ConcertsPage implements OnInit, ConcertsInterface {
     }
 
     onUpdate(data: any) {
-        throw new Error('Method not implemented.');
+        this.concertService.updateConcert(data).subscribe({
+            next: res => {
+                console.log(res);
+            },
+            error: err => {
+                console.error(err);
+            }
+        });
     }
 
     onDeleteClicked(concert: Concert) {
-        throw new Error('Method not implemented.');
+        this.concertService.deleteConcert(concert.id).subscribe({
+            next: res => {
+                console.log(res);
+            },
+            error: err => {
+                console.error(err);
+            }
+        });
     }
 
-
-
-    onNewConcertClicked() {
-        throw new Error('Method not implemented.');
+    async onAddConcertClick(event: any) {
+        let onDismiss = ((res: any) => {
+            if (res.role = "submit") {
+                this.concertService.addConcert(res.data).subscribe({
+                    next: res => {
+                        console.log(res);
+                    },
+                    error: err => {
+                        console.error(err);
+                    }
+                });
+            }
+        })
+        this.presentForm(null, onDismiss);
+        event.stopPropagation();
     }
 
 
