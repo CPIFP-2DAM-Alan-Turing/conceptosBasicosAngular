@@ -7,7 +7,7 @@ interface CrudConcerts {
     getAll(): Observable<Concert[]>;
     getConcert(id: number): Observable<Concert>;
     createConcert(concert: Concert): Observable<Concert>;
-    updateConcert(data: any): Observable<Concert>;
+    updateConcert(concert: Concert): Observable<Concert>;
     deleteConcert(id: number): Observable<Concert>;
 }
 @Injectable({
@@ -40,26 +40,40 @@ export class ConcertsService implements CrudConcerts {
                 if (concert)
                     observer.next(concert);
                 else
-                    observer.error(new UserNotFoundException());
+                    observer.error(new ConcertNotFoundException());
                 observer.complete();
             }, 1000);
         });
     }
     public createConcert(concert: Concert): Observable<Concert> {
         console.log("Entra en createConcert(concert: Concert)");
-        return new Observable<Concert>(observer=>{
+        return new Observable<Concert>(observer => {
             setTimeout(() => {
-              var _concerts = [...this._concerts.value];
-              concert.id = ++this.id;
-              _concerts.push(concert);
-              this._concerts.next(_concerts);
-              observer.next(concert);
+                var _concerts = [...this._concerts.value];
+                concert.id = ++this.id;
+                _concerts.push(concert);
+                this._concerts.next(_concerts);
+                observer.next(concert);
             }, 1000);
-          });
+        });
     }
-    public updateConcert(data: any): Observable<Concert> {
+    public updateConcert(concert: Concert): Observable<Concert> {
         console.log("Entra en updateConcert(data: any)");
-        throw new Error('Method not implemented.');
+        return new Observable(observer => {
+            setTimeout(() => {
+                var _concerts = [...this._concerts.value];
+                var index = _concerts.findIndex(u => u.id == concert.id);
+                if (index < 0)
+                    observer.error(new ConcertNotFoundException());
+                else {
+                    _concerts[index] = concert;
+                    observer.next(concert);
+                    this._concerts.next(_concerts);
+                }
+                observer.complete();
+            }, 500);
+
+        });
     }
     public deleteConcert(id: number): Observable<Concert> {
         console.log("Entra en deleteConcert(id: number)");
@@ -68,6 +82,7 @@ export class ConcertsService implements CrudConcerts {
 }
 
 
-export class UserNotFoundException extends Error {
+
+export class ConcertNotFoundException extends Error {
     // . declare any additional properties or methods .
 }
