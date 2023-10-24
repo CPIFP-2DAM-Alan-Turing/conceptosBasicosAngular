@@ -6,7 +6,7 @@ import { Concert } from '../models/concert.model';
 interface CrudConcerts {
     getAll(): Observable<Concert[]>;
     getConcert(id: number): Observable<Concert>;
-    createConcert(concert: Concert): Observable<Concert>;
+    addConcert(concert: Concert): Observable<Concert>;
     updateConcert(concert: Concert): Observable<Concert>;
     deleteConcert(id: number): Observable<Concert>;
 }
@@ -62,7 +62,7 @@ export class ConcertsService implements CrudConcerts {
      * @param concert Concert with the data to create
      * @returns Observable<Concert>
      */
-    public createConcert(concert: Concert): Observable<Concert> {
+    public addConcert(concert: Concert): Observable<Concert> {
         console.log("Entra en createConcert(concert: Concert)");
         return new Observable<Concert>(observer => {
             setTimeout(() => {
@@ -89,6 +89,8 @@ export class ConcertsService implements CrudConcerts {
                 if (index < 0)
                     observer.error(new ConcertNotFoundException());
                 else {
+                    // TODO esto hay que quitarlo, es para que no se borre la imagen al hacer update
+                    concert.image = _concerts[index].image;
                     _concerts[index] = concert;
                     observer.next(concert);
                     this._concerts.next(_concerts);
