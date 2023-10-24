@@ -20,6 +20,7 @@ export class ConcertsService implements CrudConcerts {
     constructor() { }
 
     public getAll(): Observable<Concert[]> {
+        console.log("Entra en getAll()");
         return new Observable(observer => {
             setTimeout(() => {
                 var concerts = concertsData;
@@ -31,15 +32,33 @@ export class ConcertsService implements CrudConcerts {
     }
 
     public getConcert(id: number): Observable<Concert> {
-        throw new Error('Method not implemented.');
+        console.log("Entra en getConcert(id)");
+        return new Observable(observer => {
+            setTimeout(() => {
+                var concert = this._concerts.value.find(concert => concert.id == id);
+                if (concert)
+                    observer.next(concert);
+                else
+                    observer.error(new UserNotFoundException());
+                observer.complete();
+            }, 1000);
+        });
     }
     public createConcert(concert: Concert): Observable<Concert> {
+        console.log("Entra en createConcert(concert: Concert)");
         throw new Error('Method not implemented.');
     }
     public updateConcert(data: any): Observable<Concert> {
+        console.log("Entra en updateConcert(data: any)");
         throw new Error('Method not implemented.');
     }
     public deleteConcert(id: number): Observable<Concert> {
+        console.log("Entra en deleteConcert(id: number)");
         throw new Error('Method not implemented.');
     }
+}
+
+
+export class UserNotFoundException extends Error {
+    // . declare any additional properties or methods .
 }
