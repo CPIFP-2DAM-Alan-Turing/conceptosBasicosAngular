@@ -16,10 +16,16 @@ interface CrudConcerts {
 export class ConcertsService implements CrudConcerts {
     private _concerts: BehaviorSubject<Concert[]> = new BehaviorSubject<Concert[]>([]);
     public concerts$: Observable<Concert[]> = this._concerts.asObservable();
-    public id = 50; // There are 50 concerts in the initial list
+    public id = 50;      // There are 50 concerts in the initial list
+    private min = 0;     // Var for min delay in loading data
+    private max = 2000;  // Var for max delay in loading data
 
     constructor() { }
 
+    /**
+     * Return an observable with a list of all the concerts.
+     * @returns Observable<Concert[]> 
+     */
     public getAll(): Observable<Concert[]> {
         console.log("Entra en getAll()");
         return new Observable(observer => {
@@ -28,10 +34,15 @@ export class ConcertsService implements CrudConcerts {
                 this._concerts.next(concerts);
                 observer.next(concerts);
                 observer.complete();
-            }, 1000);
+            }, randomNum(this.min, this.max));
         });
     }
 
+    /**
+     * Returns an observable with the concert with the id passed as a parameter.
+     * @param id Concert id
+     * @returns Observable<Concert>
+     */
     public getConcert(id: number): Observable<Concert> {
         console.log("Entra en getConcert(id)");
         return new Observable(observer => {
@@ -42,9 +53,15 @@ export class ConcertsService implements CrudConcerts {
                 else
                     observer.error(new ConcertNotFoundException());
                 observer.complete();
-            }, 1000);
+            }, randomNum(this.min, this.max));
         });
     }
+
+    /**
+     * Create a new concert
+     * @param concert Concert with the data to create
+     * @returns Observable<Concert>
+     */
     public createConcert(concert: Concert): Observable<Concert> {
         console.log("Entra en createConcert(concert: Concert)");
         return new Observable<Concert>(observer => {
@@ -54,9 +71,15 @@ export class ConcertsService implements CrudConcerts {
                 _concerts.push(concert);
                 this._concerts.next(_concerts);
                 observer.next(concert);
-            }, 1000);
+            }, randomNum(this.min, this.max));
         });
     }
+
+    /**
+     * Update concert data
+     * @param concert Concert with the data to update
+     * @returns Observable<Concert>
+     */
     public updateConcert(concert: Concert): Observable<Concert> {
         console.log("Entra en updateConcert(cncert: Concert)");
         return new Observable(observer => {
@@ -71,10 +94,15 @@ export class ConcertsService implements CrudConcerts {
                     this._concerts.next(_concerts);
                 }
                 observer.complete();
-            }, 500);
-
+            }, randomNum(this.min, this.max));
         });
     }
+
+    /**
+     * Delete the concert with the id passed as a parameter
+     * @param id Concert id
+     * @returns Observable<Concert>
+     */
     public deleteConcert(id: number): Observable<Concert> {
         console.log("Entra en deleteConcert(id: number)");
         return new Observable(observer => {
@@ -90,13 +118,27 @@ export class ConcertsService implements CrudConcerts {
                     observer.next(removedConcert);
                 }
                 observer.complete();
-            }, 500);
+            }, randomNum(this.min, this.max));
         });
     }
 }
 
 
-
+/**
+ * Class for exception for concert not found
+ */
 export class ConcertNotFoundException extends Error {
     // . declare any additional properties or methods .
+}
+
+/**
+ * Generate a random number between the two numbers passed as parameters
+ * @param min Min value
+ * @param max Max value
+ * @returns number
+ */
+function randomNum(min: number, max: number): number {
+    const time = (Math.floor(Math.random() * (max - min) + min));
+    console.log("Delay: ", time);
+    return time;
 }
