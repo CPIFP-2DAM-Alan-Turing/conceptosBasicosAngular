@@ -1,16 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
+import { Observable } from 'rxjs';
 import { Concert } from 'src/app/core/models/concert.model';
 import { ConcertsService } from 'src/app/core/services/concerts.service';
 import { ConcertFormComponent } from './components/concert-form/concert-form.component';
+
+interface ConcertsInterface {
+    onFavClicked(id: number): any;
+    onCardClicked(concert: Concert): any;
+    onUpdate(data: any): any;
+    onDeleteClicked(concert: Concert): any;
+    onNewConcertClicked(): any;
+}
 
 @Component({
     selector: 'app-concerts',
     templateUrl: './concerts.page.html',
     styleUrls: ['./concerts.page.scss'],
 })
-export class ConcertsPage implements OnInit {
+export class ConcertsPage implements OnInit, ConcertsInterface {
     loading = true;
 
     constructor(
@@ -33,9 +42,13 @@ export class ConcertsPage implements OnInit {
         this.router.navigate(['/home']);
     }
 
+    onFavClicked(id: number) {
+        throw new Error('Method not implemented.');
+    }
+
     onCardClicked(concert: Concert) {
         let onDismiss = (data: any) => {
-            // TODO onDismiss
+            // TODO onDismiss: onUpdate() onDeleteClicked()
         }
         this.presentForm(concert, onDismiss);
     }
@@ -53,5 +66,21 @@ export class ConcertsPage implements OnInit {
             onDismiss(result);
         });
     }
+
+    onUpdate(data: any) {
+        throw new Error('Method not implemented.');
+    }
+
+    onDeleteClicked(concert: Concert) {
+        throw new Error('Method not implemented.');
+    }
+
+
+
+    onNewConcertClicked() {
+        throw new Error('Method not implemented.');
+    }
+
+
 
 }
