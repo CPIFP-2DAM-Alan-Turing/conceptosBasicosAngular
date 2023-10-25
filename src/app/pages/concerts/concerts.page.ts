@@ -64,7 +64,6 @@ export class ConcertsPage implements OnInit, ConcertsInterface {
         });
         form.present();
         form.onDidDismiss().then(result => {
-            console.log(result);
             onDismiss(result);
         });
     }

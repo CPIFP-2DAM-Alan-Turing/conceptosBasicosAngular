@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { Concert } from 'src/app/core/models/concert.model';
 
@@ -15,6 +15,8 @@ export class ConcertFormComponent implements OnInit {
         if (_concert) {
             this.form.controls['id'].setValue(_concert.id);
             this.form.controls['description'].setValue(_concert.description);
+            this.form.controls['concertDate'].setValue(_concert.concertDate);
+            this.form.controls['ticketSaleDate'].setValue(_concert.ticketSaleDate);
             this.form.controls['locationType'].setValue(_concert.locationType);
             this.form.controls['locationAddressType'].setValue(_concert.addressType);
             this.form.controls['addressCountry'].setValue(_concert.addressCountry);
@@ -36,6 +38,8 @@ export class ConcertFormComponent implements OnInit {
             description: [''],
             locationType: [''],
             locationAddressType: [''],
+            concertDate: [''],
+            ticketSaleDate: [''],
             addressCountry: [''],
             addressLocality: [''],
             addressRegion: [''],
