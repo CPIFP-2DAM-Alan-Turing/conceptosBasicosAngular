@@ -90,7 +90,7 @@ export class ConcertsPage implements OnInit, ConcertsInterface {
         });
     }
 
-    onNewConcertClicked() {
+    onAddConcertClick() {
         throw new Error('Method not implemented.');
     }
 
