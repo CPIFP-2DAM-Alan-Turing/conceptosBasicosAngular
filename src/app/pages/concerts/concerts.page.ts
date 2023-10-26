@@ -90,10 +90,21 @@ export class ConcertsPage implements OnInit, ConcertsInterface {
         });
     }
 
-    onAddConcertClick() {
-        throw new Error('Method not implemented.');
+    async onAddConcertClick(event: any) {
+        let onDismiss = ((res: any) => {
+            if (res.role = "submit") {
+                this.concertService.addConcert(res.data).subscribe({
+                    next: res => {
+                        console.log(res);
+                    },
+                    error: err => {
+                        console.error(err);
+                    }
+                });
+            }
+        })
+        this.presentForm(null, onDismiss);
+        event.stopPropagation();
     }
-
-
 
 }
