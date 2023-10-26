@@ -58,4 +58,12 @@ export class ConcertFormComponent implements OnInit {
         this.formModal.dismiss(this.form.value, "submit");
     }
 
+    public onCancel() {
+        this.formModal.dismiss(undefined, "cancel");
+    }
+
+    public onDelete() {
+        this.formModal.dismiss(this.form.value, "delete");
+    }
+    
 }

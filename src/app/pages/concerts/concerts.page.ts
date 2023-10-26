@@ -46,6 +46,9 @@ export class ConcertsPage implements OnInit, ConcertsInterface {
                 case "submit":
                     this.onUpdate(res.data);
                     break;
+                case "delete":
+                    this.onDeleteClicked(res.data);
+                    break;
                 default:
             }
         }
@@ -87,21 +90,8 @@ export class ConcertsPage implements OnInit, ConcertsInterface {
         });
     }
 
-    async onAddConcertClick(event: any) {
-        let onDismiss = ((res: any) => {
-            if (res.role = "submit") {
-                this.concertService.addConcert(res.data).subscribe({
-                    next: res => {
-                        console.log(res);
-                    },
-                    error: err => {
-                        console.error(err);
-                    }
-                });
-            }
-        })
-        this.presentForm(null, onDismiss);
-        event.stopPropagation();
+    onNewConcertClicked() {
+        throw new Error('Method not implemented.');
     }
 
 
