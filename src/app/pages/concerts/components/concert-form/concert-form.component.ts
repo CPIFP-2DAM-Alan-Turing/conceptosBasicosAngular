@@ -13,7 +13,10 @@ export class ConcertFormComponent implements OnInit {
     @Input() set concert(_concert: Concert | null) {
         if (_concert) {
             this.form.controls['id'].setValue(_concert.id);
+            this.form.controls['name'].setValue(_concert.name);
             this.form.controls['description'].setValue(_concert.description);
+            this.form.controls['concertDate'].setValue(_concert.concertDate);
+            this.form.controls['ticketSaleDate'].setValue(_concert.ticketSaleDate);
             this.form.controls['locationType'].setValue(_concert.locationType);
             this.form.controls['locationAddressType'].setValue(_concert.addressType);
             this.form.controls['addressCountry'].setValue(_concert.addressCountry);
@@ -22,7 +25,6 @@ export class ConcertFormComponent implements OnInit {
             this.form.controls['postalCode'].setValue(_concert.postalCode);
             this.form.controls['streetAddress'].setValue(_concert.streetAddress);
             this.form.controls['locationName'].setValue(_concert.locationName);
-            this.form.controls['name'].setValue(_concert.name);
         }
     }
 
@@ -31,16 +33,18 @@ export class ConcertFormComponent implements OnInit {
     ) {
         this.form = this.fb.group({
             id: [null],
+            name: [''],
             description: [''],
             locationType: [''],
             locationAddressType: [''],
+            concertDate: [''],
+            ticketSaleDate: [''],
             addressCountry: [''],
             addressLocality: [''],
             addressRegion: [''],
             postalCode: [''],
             streetAddress: [''],
-            locationName: [''],
-            name: [''],
+            locationName: ['']
         });
     }
 
