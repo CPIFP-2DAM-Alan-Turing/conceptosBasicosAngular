@@ -14,6 +14,7 @@ export class ConcertFormComponent implements OnInit {
     @Input() set concert(_concert: Concert | null) {
         if (_concert) {
             this.form.controls['id'].setValue(_concert.id);
+            this.form.controls['name'].setValue(_concert.name);
             this.form.controls['description'].setValue(_concert.description);
             this.form.controls['concertDate'].setValue(_concert.concertDate);
             this.form.controls['ticketSaleDate'].setValue(_concert.ticketSaleDate);
@@ -25,7 +26,6 @@ export class ConcertFormComponent implements OnInit {
             this.form.controls['postalCode'].setValue(_concert.postalCode);
             this.form.controls['streetAddress'].setValue(_concert.streetAddress);
             this.form.controls['locationName'].setValue(_concert.locationName);
-            this.form.controls['name'].setValue(_concert.name);
         }
     }
 
@@ -35,18 +35,18 @@ export class ConcertFormComponent implements OnInit {
     ) {
         this.form = this.fb.group({
             id: [null],
+            name: ['', Validators.required],
             description: [''],
-            locationType: [''],
-            locationAddressType: [''],
-            concertDate: [''],
-            ticketSaleDate: [''],
-            addressCountry: [''],
-            addressLocality: [''],
-            addressRegion: [''],
-            postalCode: [''],
-            streetAddress: [''],
-            locationName: [''],
-            name: [''],
+            locationType: ['', Validators.required],
+            locationAddressType: ['', Validators.required],
+            concertDate: ['', [Validators.required, ]],
+            ticketSaleDate: ['', Validators.required],
+            addressCountry: ['', Validators.required],
+            addressLocality: ['', Validators.required],
+            addressRegion: ['', Validators.required],
+            postalCode: ['', Validators.required],
+            streetAddress: ['', Validators.required],
+            locationName: ['', Validators.required]
         });
     }
 
