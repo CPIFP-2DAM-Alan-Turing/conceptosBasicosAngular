@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ModalController } from '@ionic/angular';
 import { Concert } from 'src/app/core/models/concert.model';
 
 
@@ -29,7 +30,8 @@ export class ConcertFormComponent implements OnInit {
     }
 
     constructor(
-        private fb: FormBuilder
+        private fb: FormBuilder,
+        private formModal: ModalController
     ) {
         this.form = this.fb.group({
             id: [null],
@@ -50,6 +52,10 @@ export class ConcertFormComponent implements OnInit {
 
     ngOnInit() {
 
+    }
+
+    public onSubmit() {
+        this.formModal.dismiss(this.form.value, "submit");
     }
 
 }

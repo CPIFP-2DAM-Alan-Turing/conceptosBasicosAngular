@@ -66,6 +66,8 @@ export class ConcertsService implements CrudConcerts {
                 if (index < 0)
                     observer.error(new ConcertNotFoundException());
                 else {
+                    // TODO esto hay que quitarlo, es para que no se borre la imagen al hacer update
+                    concert.image = _concerts[index].image;
                     _concerts[index] = concert;
                     observer.next(concert);
                     this._concerts.next(_concerts);

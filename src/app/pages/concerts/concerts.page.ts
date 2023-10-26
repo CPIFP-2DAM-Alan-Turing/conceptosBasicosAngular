@@ -47,8 +47,13 @@ export class ConcertsPage implements OnInit, ConcertsInterface {
     }
 
     onCardClicked(concert: Concert) {
-        let onDismiss = (data: any) => {
-            // TODO onDismiss: onUpdate() onDeleteClicked()
+        let onDismiss = (res: any) => {
+            switch (res.role) {
+                case "submit":
+                    this.onUpdate(res.data);
+                    break;
+                default:
+            }
         }
         this.presentForm(concert, onDismiss);
     }
@@ -68,7 +73,14 @@ export class ConcertsPage implements OnInit, ConcertsInterface {
     }
 
     onUpdate(data: any) {
-        throw new Error('Method not implemented.');
+        this.concertService.updateConcert(data).subscribe({
+            next: res => {
+                console.log(res);
+            },
+            error: err => {
+                console.error(err);
+            }
+        });
     }
 
     onDeleteClicked(concert: Concert) {
