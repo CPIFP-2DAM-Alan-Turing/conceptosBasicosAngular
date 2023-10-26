@@ -1,27 +1,30 @@
-#container {
-  text-align: center;
+#hero-section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // background-image: url("https://images.unsplash.com/photo-1609102026400-3c0ca378e4c5");
+    // background-image: url("https://images.unsplash.com/photo-1610900603480-c0a85ac8e315");
+    // background-image: url("https://images.unsplash.com/photo-1501962679900-bea61483313b");
+    background-position: center;
+    // background-image: url("https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2");
+    // background-image: url("https://images.unsplash.com/photo-1470229538611-16ba8c7ffbd7");
+    background-image: url("https://images.unsplash.com/uploads/1411160110892ab555b6f/80b0d25e");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+#hero-section ion-img {
+    width: 10vw;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+#hero-section h1 {
+    font-size: 3rem;
 }
 
-#container a {
-  text-decoration: none;
+.row {
+    gap: 100px;
 }

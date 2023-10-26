@@ -1,15 +1,21 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Inicio
-    </ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="about()">Conócenos</ion-button>
-      <ion-button (click)="concerts()">Conciertos</ion-button>
-    </ion-buttons>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>
+            Inicio
+        </ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="about()">Conócenos</ion-button>
+            <ion-button (click)="concerts()">Conciertos</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-
-</ion-content>
+<div id="hero-section">
+    <ion-text color="light">
+        <h1>Conceptos básicos de Angular</h1>
+    </ion-text>
+    <ion-row class="row">
+        <ion-img src="https://angular.io/assets/images/logos/angularjs/AngularJS-Shield.svg"></ion-img>
+        <ion-img src="https://ionicacademy.com/wp-content/uploads/2017/06/ionic-logo-portrait.png"></ion-img>
+    </ion-row>
+</div>
