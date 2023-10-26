@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ModalController } from '@ionic/angular';
 import { Concert } from 'src/app/core/models/concert.model';
 
 
@@ -29,27 +30,32 @@ export class ConcertFormComponent implements OnInit {
     }
 
     constructor(
-        private fb: FormBuilder
+        private fb: FormBuilder,
+        private formModal: ModalController
     ) {
         this.form = this.fb.group({
             id: [null],
-            name: [''],
+            name: ['', Validators.required],
             description: [''],
-            locationType: [''],
-            locationAddressType: [''],
-            concertDate: [''],
-            ticketSaleDate: [''],
-            addressCountry: [''],
-            addressLocality: [''],
-            addressRegion: [''],
-            postalCode: [''],
-            streetAddress: [''],
-            locationName: ['']
+            locationType: ['', Validators.required],
+            locationAddressType: ['', Validators.required],
+            concertDate: ['', Validators.required],
+            ticketSaleDate: ['', Validators.required],
+            addressCountry: ['', Validators.required],
+            addressLocality: ['', Validators.required],
+            addressRegion: ['', Validators.required],
+            postalCode: ['', Validators.required],
+            streetAddress: ['', Validators.required],
+            locationName: ['', Validators.required]
         });
     }
 
     ngOnInit() {
 
+    }
+
+    public onSubmit() {
+        this.formModal.dismiss(this.form.value, "submit");
     }
 
 }
