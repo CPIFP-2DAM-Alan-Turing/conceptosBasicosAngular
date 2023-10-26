@@ -6,7 +6,7 @@ import { Concert } from '../models/concert.model';
 interface CrudConcerts {
     getAll(): Observable<Concert[]>;
     getConcert(id: number): Observable<Concert>;
-    createConcert(concert: Concert): Observable<Concert>;
+    addConcert(concert: Concert): Observable<Concert>;
     updateConcert(concert: Concert): Observable<Concert>;
     deleteConcert(id: number): Observable<Concert>;
 }
@@ -45,7 +45,7 @@ export class ConcertsService implements CrudConcerts {
             }, 1000);
         });
     }
-    public createConcert(concert: Concert): Observable<Concert> {
+    public addConcert(concert: Concert): Observable<Concert> {
         console.log("Entra en createConcert(concert: Concert)");
         return new Observable<Concert>(observer => {
             setTimeout(() => {

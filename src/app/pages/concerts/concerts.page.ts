@@ -10,7 +10,7 @@ interface ConcertsInterface {
     onCardClicked(concert: Concert): any;
     onUpdate(data: any): any;
     onDeleteClicked(concert: Concert): any;
-    onNewConcertClicked(): any;
+    onAddConcertClick(event: any): any;
 }
 
 @Component({
@@ -60,7 +60,7 @@ export class ConcertsPage implements OnInit, ConcertsInterface {
         this.presentForm(concert, onDismiss);
     }
 
-    async presentForm(data: Concert, onDismiss: (data: any) => void) {
+    async presentForm(data: Concert | null, onDismiss: (data: any) => void) {
         const form = await this.form.create({
             component: ConcertFormComponent,
             componentProps: {
@@ -69,7 +69,6 @@ export class ConcertsPage implements OnInit, ConcertsInterface {
         });
         form.present();
         form.onDidDismiss().then(result => {
-            console.log(result);
             onDismiss(result);
         });
     }
@@ -96,10 +95,21 @@ export class ConcertsPage implements OnInit, ConcertsInterface {
         });
     }
 
-    onNewConcertClicked() {
-        throw new Error('Method not implemented.');
+    async onAddConcertClick(event: any) {
+        let onDismiss = ((res: any) => {
+            if (res.role = "submit") {
+                this.concertService.addConcert(res.data).subscribe({
+                    next: res => {
+                        console.log(res);
+                    },
+                    error: err => {
+                        console.error(err);
+                    }
+                });
+            }
+        })
+        this.presentForm(null, onDismiss);
+        event.stopPropagation();
     }
-
-
 
 }
