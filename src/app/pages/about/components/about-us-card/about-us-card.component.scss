@@ -1,21 +1,30 @@
-ion-card {
-  max-width: 600px;
-  --background: var(--ion-color-primary);
-  * {
+* {
     color: var(--ion-color-primary-contrast);
-  }
-  ion-card-header {
-    > div {
-      display: flex;
-      align-items: center;
-      column-gap: 2rem;
+}
+
+ion-card {
+    max-width: 500px;
+    min-width: 400px;
+    --background: var(--ion-color-tertiary);
+    transition: 0.2s;
+
+    ion-card-header {
+        >div {
+            display: flex;
+            align-items: center;
+            column-gap: 2rem;
+        }
     }
-  }
-  ion-footer {
-    ion-button {
-      ion-icon {
-        --padding-start: 1rem;
-      }
+
+    ion-footer {
+        ion-button {
+            ion-icon {
+                --padding-start: 1rem;
+            }
+        }
     }
-  }
+}
+
+ion-card:hover {
+    transform: translateY(-10px);
 }

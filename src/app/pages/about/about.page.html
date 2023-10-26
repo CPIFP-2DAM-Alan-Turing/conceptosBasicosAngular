@@ -1,14 +1,13 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Sobre nosotros</ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="home()">Inicio</ion-button>
-    </ion-buttons>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>Sobre nosotros</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="home()">Inicio</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
-<ion-content>
-  <app-about-us-card
-    *ngFor="let person of persons"
-    [person]="person"
-  ></app-about-us-card>
+<ion-content id="content">
+    <ion-row>
+        <app-about-us-card *ngFor="let person of persons" [person]="person"></app-about-us-card>
+    </ion-row>
 </ion-content>
