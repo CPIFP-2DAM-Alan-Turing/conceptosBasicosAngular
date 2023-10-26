@@ -19,6 +19,6 @@ export const PERSONS_ABOUT = [
         imageAlt: "Fotografía de Juan Manuel Gutiérrez",
         githubUrl: "https://github.com/Juanma-Gutierrez",
         linkedinUrl: "https://www.linkedin.com/in/juanmanuelgutierrezm/",
-        description: "Desarrollador de aplicaciones multiplataforma | Desarrollador de aplicaciones web. Estudios de HTML, CSS, JavasCript, Java, MySQL. Conocimientos de lenguajes C, Python, PHP, Kotlin y de las plataformas AWS y Docker."
+        description: "Desarrollador de aplicaciones multiplataforma y de aplicaciones web. Estudios de HTML, CSS, JavasCript, Java, MySQL. Conocimientos C, Python, PHP, Kotlin y de las plataformas AWS y Docker."
     }
 ]
