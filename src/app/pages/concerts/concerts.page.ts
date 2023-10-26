@@ -46,9 +46,6 @@ export class ConcertsPage implements OnInit, ConcertsInterface {
                 case "submit":
                     this.onUpdate(res.data);
                     break;
-                case "delete":
-                    this.onDeleteClicked(res.data);
-                    break;
                 default:
             }
         }

@@ -39,7 +39,7 @@ export class ConcertFormComponent implements OnInit {
             description: [''],
             locationType: ['', Validators.required],
             locationAddressType: ['', Validators.required],
-            concertDate: ['', [Validators.required, ]],
+            concertDate: ['', Validators.required],
             ticketSaleDate: ['', Validators.required],
             addressCountry: ['', Validators.required],
             addressLocality: ['', Validators.required],
@@ -56,14 +56,6 @@ export class ConcertFormComponent implements OnInit {
 
     public onSubmit() {
         this.formModal.dismiss(this.form.value, "submit");
-    }
-
-    public onCancel() {
-        this.formModal.dismiss(undefined, "cancel");
-    }
-
-    public onDelete() {
-        this.formModal.dismiss(this.form.value, "delete");
     }
 
 }
