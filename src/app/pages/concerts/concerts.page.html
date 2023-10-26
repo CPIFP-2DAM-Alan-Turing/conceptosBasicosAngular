@@ -16,6 +16,11 @@
       ></app-concert-info>
     </ion-row>
   </ion-grid>
+  <ion-fab slot="fixed" horizontal="end" vertical="bottom">
+    <ion-fab-button (click)="onAddConcertClick($event)"> 
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
 
 <ion-loading
