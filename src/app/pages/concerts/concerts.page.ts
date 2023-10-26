@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import { Observable } from 'rxjs';
 import { Concert } from 'src/app/core/models/concert.model';
 import { ConcertsService } from 'src/app/core/services/concerts.service';
 import { ConcertFormComponent } from './components/concert-form/concert-form.component';
@@ -52,6 +51,9 @@ export class ConcertsPage implements OnInit, ConcertsInterface {
                 case "submit":
                     this.onUpdate(res.data);
                     break;
+                case "delete":
+                    this.onDeleteClicked(res.data);
+                    break;
                 default:
             }
         }
@@ -84,10 +86,15 @@ export class ConcertsPage implements OnInit, ConcertsInterface {
     }
 
     onDeleteClicked(concert: Concert) {
-        throw new Error('Method not implemented.');
+        this.concertService.deleteConcert(concert.id).subscribe({
+            next: res => {
+                console.log(res);
+            },
+            error: err => {
+                console.error(err);
+            }
+        });
     }
-
-
 
     onNewConcertClicked() {
         throw new Error('Method not implemented.');
