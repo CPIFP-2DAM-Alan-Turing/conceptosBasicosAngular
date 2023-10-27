@@ -8,17 +8,16 @@ import { AboutPageRoutingModule } from './about-routing.module';
 
 import { AboutPage } from './about.page';
 import { AboutUsCardComponent } from './components/about-us-card/about-us-card.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   imports: [
+    SharedModule,
     AboutPageRoutingModule,
-    CommonModule,
-    FormsModule,
-    IonicModule
-  ],
-  declarations: [
+],
+declarations: [
     AboutPage,
-    AboutUsCardComponent
+    AboutUsCardComponent,
   ]
 })
 export class AboutPageModule {}

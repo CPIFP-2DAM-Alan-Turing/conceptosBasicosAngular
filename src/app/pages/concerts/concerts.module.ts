@@ -12,14 +12,12 @@ import { ConcertFormComponent } from './components/concert-form/concert-form.com
 
 @NgModule({
     imports: [
-        CommonModule,
-        IonicModule,
+        SharedModule,
         ConcertsPageRoutingModule,
-        SharedModule
     ],
     declarations: [
-        ConcertsPage, 
-        ConcertInfoComponent, 
+        ConcertsPage,
+        ConcertInfoComponent,
         ConcertFormComponent
     ]
 })

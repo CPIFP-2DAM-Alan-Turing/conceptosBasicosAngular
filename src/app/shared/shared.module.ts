@@ -1,17 +1,32 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+import { ButtonEffectDirective } from './directives/button-effect.directive';
+import { AboutUsCardComponent } from '../pages/about/components/about-us-card/about-us-card.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    // Directives
+    ButtonEffectDirective,
+  ],
   imports: [
+    // Modules
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    IonicModule,
   ],
   exports: [
-    ReactiveFormsModule
+    // Modules
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    IonicModule,
+    // Directives
+    ButtonEffectDirective,
   ]
 })
 export class SharedModule { }
