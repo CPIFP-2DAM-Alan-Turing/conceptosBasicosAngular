@@ -20,4 +20,4 @@ declarations: [
     AboutUsCardComponent,
   ]
 })
-export class AboutPageModule {}
+export class AboutPageModule { }
