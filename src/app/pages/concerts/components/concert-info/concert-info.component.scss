@@ -5,6 +5,10 @@ ion-card {
   box-shadow: 6px 0 5px -4px rgba(0, 0, 0, 0.2);
   padding-bottom: 2rem;
 
+  &:hover {
+    --ion-color-medium: var(--ion-color-warning-shade);
+  }
+
   img {
     width: 100%;
   }
