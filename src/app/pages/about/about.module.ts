@@ -10,15 +10,15 @@ import { AboutPage } from './about.page';
 import { AboutUsCardComponent } from './components/about-us-card/about-us-card.component';
 
 @NgModule({
-  imports: [
-    AboutPageRoutingModule,
-    CommonModule,
-    FormsModule,
-    IonicModule
-  ],
-  declarations: [
-    AboutPage,
-    AboutUsCardComponent
-  ]
+    imports: [
+        AboutPageRoutingModule,
+        CommonModule,
+        FormsModule,
+        IonicModule
+    ],
+    declarations: [
+        AboutPage,
+        AboutUsCardComponent
+    ]
 })
-export class AboutPageModule {}
+export class AboutPageModule { }
