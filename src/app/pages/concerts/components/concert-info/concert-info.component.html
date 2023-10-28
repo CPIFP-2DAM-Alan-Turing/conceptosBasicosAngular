@@ -29,10 +29,21 @@
 
   <img alt="Image of {{ concert?.name }}" [src]="concert?.image" />
   <hr class="dotted" />
+
   <ion-card-header>
     <ion-card-title>{{ concert?.name }}</ion-card-title>
-    <ion-card-subtitle>{{ concert?.concertDate | date }}</ion-card-subtitle>
   </ion-card-header>
+  <div class="ion-card-content">
+    <div class="saleDate">
+      <p>Venta tickets</p>
+      <p class="date">{{ concert?.ticketSaleDate| date:("dd MMM YY") }}</p>
+    </div>
+    <div class="concertDate">
+      <p>Concierto</p>
+      <p class="date">{{ concert?.concertDate | date:("dd MMM YY") }}</p>
+    </div>
+  </div>
+  
   <ion-button (click)="changeFav($event)" fill="clear">
     <ion-icon
       *ngIf="concert?.fav"
