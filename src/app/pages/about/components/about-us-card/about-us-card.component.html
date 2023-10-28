@@ -1,40 +1,30 @@
-<ion-card>
-  <ion-card-header>
-    <div aria-hidden="true">
-      <ion-avatar>
-        <img [alt]="person?.imageAlt" [src]="person?.image" />
-      </ion-avatar>
-      <div>
-        <ion-card-subtitle>{{ person?.jobPosition }}</ion-card-subtitle>
-        <ion-card-title>
-          {{ person?.firstName }} {{ person?.lastName }}
-        </ion-card-title>
-      </div>
-    </div>
-  </ion-card-header>
+<ion-card appButtonEffect>
+    <ion-card-header>
+        <div aria-hidden="true">
+            <ion-avatar>
+                <img [alt]="person?.imageAlt" [src]="person?.image" />
+            </ion-avatar>
+            <div>
+                <ion-card-subtitle>{{ person?.jobPosition }}</ion-card-subtitle>
+                <ion-card-title>
+                    {{ person?.firstName }} {{ person?.lastName }}
+                </ion-card-title>
+            </div>
+        </div>
+    </ion-card-header>
 
-  <ion-card-content>
-    {{ person?.description }}
-  </ion-card-content>
+    <ion-card-content>
+        {{ person?.description }}
+    </ion-card-content>
 
-  <ion-footer>
-    <ion-button
-      [href]="person?.linkedinUrl"
-      fill="clear"
-      aria-label="Visitar el LinkedIn"
-      target="_blank"
-    >
-      <ion-icon slot="start" aria-hidden="true" name="logo-linkedin"></ion-icon>
-      LinkedIn
-    </ion-button>
-    <ion-button
-      [href]="person?.githubUrl"
-      fill="clear"
-      aria-label="Visitar el GitHub"
-      target="_blank"
-    >
-      <ion-icon slot="start" aria-hidden="true" name="logo-github"></ion-icon>
-      GitHub
-    </ion-button>
-  </ion-footer>
+    <ion-footer>
+        <ion-button [href]="person?.linkedinUrl" fill="clear" aria-label="Visitar el LinkedIn" target="_blank">
+            <ion-icon slot="start" aria-hidden="true" name="logo-linkedin"></ion-icon>
+            LinkedIn
+        </ion-button>
+        <ion-button [href]="person?.githubUrl" fill="clear" aria-label="Visitar el GitHub" target="_blank">
+            <ion-icon slot="start" aria-hidden="true" name="logo-github"></ion-icon>
+            GitHub
+        </ion-button>
+    </ion-footer>
 </ion-card>

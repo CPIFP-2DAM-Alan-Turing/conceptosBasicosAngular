@@ -1,15 +1,25 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Inicio
-    </ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="about()">Conócenos</ion-button>
-      <ion-button (click)="concerts()">Conciertos</ion-button>
-    </ion-buttons>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>
+            Inicio
+        </ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="about()">Conócenos</ion-button>
+            <ion-button (click)="concerts()">Conciertos</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-
-</ion-content>
+<div id="hero-section">
+    <ion-text color="light">
+        <h1>Hollywood Bowl Concerts</h1>
+    </ion-text>
+    <ion-row class="row">
+        <a href="https://angular.io/" target="_blank">
+            <ion-img src="../../../assets/images/logos/angular-logo.svg"></ion-img>
+        </a>
+        <a href="https://ionicframework.com/" target="_blank">
+            <ion-img src="../../../assets/images/logos/ionic-logo.png"></ion-img>
+        </a>
+    </ion-row>
+</div>

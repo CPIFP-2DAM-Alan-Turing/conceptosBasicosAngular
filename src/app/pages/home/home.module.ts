@@ -5,13 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import { ButtonEffectDirective } from 'src/app/shared/directives/button-effect.directive';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
+    SharedModule,
     HomePageRoutingModule
   ],
   declarations: [HomePage]

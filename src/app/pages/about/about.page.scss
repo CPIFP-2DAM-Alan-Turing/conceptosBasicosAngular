@@ -1,5 +1,21 @@
-.row{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-around;
+#content {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    --background: url("https://images.unsplash.com/photo-1480506132288-68f7705954bd") no-repeat center/cover fixed;
+    
+}
+
+#content ion-row {
+    height: 100%;
+}
+
+app-about-us-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+
 }

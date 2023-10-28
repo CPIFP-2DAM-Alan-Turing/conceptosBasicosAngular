@@ -24,3 +24,12 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+
+.effect {
+    background-color: var(--ion-color-medium-shade);
+    -webkit-box-shadow: var(--ion-color-medium-contrast);
+    -moz-box-shadow: var(--ion-color-medium-contrast);
+    box-shadow: 0 0 0 3px var(--ion-color-medium-tint);
+    transform: translateY(-20px);
+}
