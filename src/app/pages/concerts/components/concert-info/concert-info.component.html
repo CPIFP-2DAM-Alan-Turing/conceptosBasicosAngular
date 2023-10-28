@@ -1,11 +1,78 @@
 <ion-card button (click)="onCardClick($event)">
-    <img alt="Image of {{ concert?.name}}" [src]="concert?.image" />
-    <ion-card-header>
-        <ion-card-title>{{ concert?.name}}</ion-card-title>
-        <ion-card-subtitle>{{ concert?.concertDate| date }}</ion-card-subtitle>
-    </ion-card-header>
-    <ion-button (click)="changeFav($event)" fill="clear">
-        <ion-icon *ngIf="concert?.fav" color="warning" name="bookmark" size="large" ></ion-icon>
-        <ion-icon *ngIf="!concert?.fav" color="secondary" name="bookmark" size="large"></ion-icon>
-    </ion-button>
+  <svg
+    class="svg-top"
+    width="1054"
+    height="22"
+    viewBox="0 0 1054 22"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M500.018 0C500.137 2.61105 500.826 5.18627 502.055 7.60423C503.412 10.2734 505.401 12.6987 507.908 14.7415C510.415 16.7844 513.392 18.4049 516.668 19.5105C519.943 20.6161 523.454 21.1852 527 21.1852C530.546 21.1852 534.057 20.6161 537.332 19.5105C540.608 18.4049 543.585 16.7844 546.092 14.7415C548.599 12.6987 550.588 10.2734 551.945 7.60423C553.174 5.18627 553.863 2.61105 553.981 0L500.018 0Z"
+      fill="var(--ion-color-light)"
+    />
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M546.092 15.5563C551.155 11.4305 554 5.83476 554 0L551.003 0C551.003 5.18712 548.474 10.1618 543.973 13.8296C539.471 17.4975 533.366 19.5581 527 19.5581C520.634 19.5581 514.529 17.4975 510.027 13.8296C505.526 10.1618 502.997 5.18712 502.997 2.95319e-06L500 3.32191e-06C500 5.83477 502.845 11.4306 507.908 15.5564C512.972 19.6821 519.839 22 527 22C534.161 22 541.028 19.6821 546.092 15.5563Z"
+      fill="var(--ion-color-medium)"
+    />
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M1054 3V0L552 0V3L1054 3ZM502 3L0 3L0 0L502 0V3Z"
+      fill="var(--ion-color-medium)"
+    />
+  </svg>
+
+  <img alt="Image of {{ concert?.name }}" [src]="concert?.image" />
+  <hr class="dotted" />
+  <ion-card-header>
+    <ion-card-title>{{ concert?.name }}</ion-card-title>
+    <ion-card-subtitle>{{ concert?.concertDate | date }}</ion-card-subtitle>
+  </ion-card-header>
+  <ion-button (click)="changeFav($event)" fill="clear">
+    <ion-icon
+      *ngIf="concert?.fav"
+      color="warning"
+      name="bookmark"
+      size="large"
+    ></ion-icon>
+    <ion-icon
+      *ngIf="!concert?.fav"
+      color="warning"
+      name="bookmark-outline"
+      size="large"
+    ></ion-icon>
+  </ion-button>
+
+  <svg
+    class="svg-bottom"
+    width="1054"
+    height="22"
+    viewBox="0 0 1054 22"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M553.982 22C553.863 19.389 553.174 16.8137 551.945 14.3958C550.588 11.7266 548.599 9.30134 546.092 7.25846C543.585 5.21557 540.608 3.59506 537.332 2.48945C534.057 1.38385 530.546 0.814804 527 0.814804C523.454 0.814804 519.943 1.38385 516.668 2.48945C513.392 3.59506 510.415 5.21556 507.908 7.25845C505.401 9.30134 503.412 11.7266 502.055 14.3958C500.826 16.8137 500.137 19.389 500.019 22H553.982Z"
+      fill="var(--ion-color-light)"
+    />
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M507.908 6.44365C502.845 10.5695 500 16.1652 500 22H502.997C502.997 16.8129 505.526 11.8382 510.027 8.17036C514.529 4.50251 520.634 2.44194 527 2.44194C533.366 2.44194 539.471 4.50251 543.973 8.17036C548.474 11.8382 551.003 16.8129 551.003 22L554 22C554 16.1652 551.155 10.5694 546.092 6.44365C541.028 2.31785 534.161 0 527 0C519.839 0 512.972 2.31785 507.908 6.44365Z"
+      fill="var(--ion-color-medium)"
+    />
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M0 19V22L502 22V19L0 19ZM552 19L1054 19V22L552 22V19Z"
+      fill="var(--ion-color-medium)"
+    />
+  </svg>
 </ion-card>

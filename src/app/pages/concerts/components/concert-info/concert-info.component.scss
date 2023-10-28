@@ -1,9 +1,44 @@
 ion-card {
-    width: 20vw;
-}
+  position: relative;
+  border-right: 3px solid var(--ion-color-medium);
+  border-left: 3px solid var(--ion-color-medium);
+  box-shadow: 5px 0 5px -3px rgba(0, 0, 0, 0.2);
+  padding-bottom: 2rem;
 
-ion-button {
+  img {
+    width: 100%;
+  }
+
+  hr.dotted {
+    margin-top: -3.5px;
+    border-top: 3px dotted var(--ion-color-medium);
+    z-index: 3;
+  }
+
+  ion-card-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  ion-button {
     position: absolute;
     right: 10px;
     top: 10px;
+  }
+
+  svg {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    z-index: 3;
+  }
+
+  .svg-bottom {
+    bottom: 0;
+  }
+
+  .svg-top {
+    top: 0;
+  }
 }
