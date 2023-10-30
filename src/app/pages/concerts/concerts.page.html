@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" sm>
   <ion-toolbar>
     <ion-title>Conciertos</ion-title>
     <ion-buttons slot="end">
@@ -7,17 +7,24 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-grid>
+  <ion-grid  [fixed]="true">
     <ion-row class="ion-justify-content-around">
-      <app-concert-info
+      <ion-col
+      sizeLg="3"
+      sizeMd="4"
+        sizeSm="6"
+        size="12"
         *ngFor="let concert of concertService.concerts$|async"
-        [concert]="concert"
-        (onCardClicked)="onCardClicked(concert)"
-      ></app-concert-info>
+      >
+        <app-concert-info
+          [concert]="concert"
+          (onCardClicked)="onCardClicked(concert)"
+        ></app-concert-info>
+      </ion-col>
     </ion-row>
   </ion-grid>
   <ion-fab slot="fixed" horizontal="end" vertical="bottom">
-    <ion-fab-button (click)="onAddConcertClick($event)"> 
+    <ion-fab-button (click)="onAddConcertClick($event)">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

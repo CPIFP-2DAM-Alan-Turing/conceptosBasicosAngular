@@ -11,6 +11,7 @@ import { Concert } from 'src/app/core/models/concert.model';
 })
 export class ConcertFormComponent implements OnInit {
     public form: FormGroup;
+    public concertName?: string;
     @Input() set concert(_concert: Concert | null) {
         if (_concert) {
             this.form.controls['id'].setValue(_concert.id);
@@ -26,6 +27,7 @@ export class ConcertFormComponent implements OnInit {
             this.form.controls['postalCode'].setValue(_concert.postalCode);
             this.form.controls['streetAddress'].setValue(_concert.streetAddress);
             this.form.controls['locationName'].setValue(_concert.locationName);
+            this.concertName = _concert.name;
         }
     }
 
