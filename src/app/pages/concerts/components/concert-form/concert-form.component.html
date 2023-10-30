@@ -1,11 +1,11 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-button color="primary" fill="clear" (click)="onCancel()">
         <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title> Concierto </ion-title>
+    <ion-title> {{ concertName }} </ion-title>
     <ion-buttons slot="end">
       <ion-button color="danger" (click)="onDelete()">
         <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
@@ -74,12 +74,20 @@
         <ion-input
           type="text"
           slot="content"
+          label="Dirección"
+          labelPlacement="floating"
+          fill="outline"
+          placeholder="Ej. 2301 N. Highland Ave."
+          formControlName="streetAddress"
+        ></ion-input>
+        <ion-input
+          type="text"
+          slot="content"
           label="País"
           labelPlacement="floating"
           fill="outline"
           placeholder="Ej. US"
           formControlName="addressCountry"
-          class=""
         ></ion-input>
         <ion-input
           type="text"
@@ -107,15 +115,6 @@
           fill="outline"
           placeholder="Ej. 90068"
           formControlName="postalCode"
-        ></ion-input>
-        <ion-input
-          type="text"
-          slot="content"
-          label="Dirección"
-          labelPlacement="floating"
-          fill="outline"
-          placeholder="Ej. 2301 N. Highland Ave."
-          formControlName="streetAddress"
         ></ion-input>
       </ion-accordion>
     </ion-accordion-group>

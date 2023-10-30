@@ -1,9 +1,74 @@
 ion-card {
-    width: 20vw;
-}
+  position: relative;
+  border-right: 3px solid var(--ion-color-medium);
+  border-left: 3px solid var(--ion-color-medium);
+  box-shadow: 6px 0 5px -4px rgba(0, 0, 0, 0.2);
+  padding-bottom: 2rem;
 
-ion-button {
+  &:hover {
+    --ion-color-medium: var(--ion-color-warning-shade);
+  }
+
+  img {
+    width: 100%;
+  }
+
+  hr.dotted {
+    margin-top: -3.5px;
+    border-top: 3px dotted var(--ion-color-medium);
+    z-index: 3;
+  }
+
+  ion-card-title {
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .ion-card-content {
+    display: flex;
+    justify-content: space-evenly;
+
+    div {
+      width: 100%;
+      text-align: center;
+
+      .date {
+        font-size: 1.2rem;
+        color: var(--ion-color-medium-shade);
+      }
+    }
+
+    div.saleDate {
+      border-right: 1px solid var(--ion-color-medium);
+    }
+
+    div.concertDate {
+      border-left: 1px solid var(--ion-color-medium);
+    }
+  }
+
+  ion-button {
     position: absolute;
     right: 10px;
     top: 10px;
+    --background-hover: var(--ion-color-medium-tint);
+    --ripple-color: var(--ion-color-medium-tint);
+  }
+
+  svg {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    z-index: 3;
+  }
+
+  .svg-bottom {
+    bottom: 0;
+  }
+
+  .svg-top {
+    top: 0;
+  }
 }
