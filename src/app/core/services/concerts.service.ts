@@ -9,7 +9,7 @@ interface CrudConcerts {
     getConcert(id: number): Observable<Concert>;
     addConcert(concert: Concert): Observable<Concert>;
     updateConcert(concert: Concert): Observable<Concert>;
-    deleteConcert(id: number): Observable<Concert>;
+    deleteConcert(id: number): Observable<void>;
 }
 @Injectable({
     providedIn: 'root'
@@ -69,23 +69,10 @@ export class ConcertsService implements CrudConcerts {
      * @param id Concert id
      * @returns Observable<Concert>
      */
-    public deleteConcert(id: number): Observable<Concert> {
-        console.log("Entra en deleteConcert(id: number)");
-        return new Observable(observer => {
-            setTimeout(() => {
-                var _concerts = [...this._concerts.value];
-                var index = _concerts.findIndex(con => con.id == id);
-                if (index < 0)
-                    observer.error(new ConcertNotFoundException());
-                else {
-                    var removedConcert = _concerts[index];
-                    _concerts = [..._concerts.slice(0, index), ..._concerts.slice(index + 1)];
-                    this._concerts.next(_concerts);
-                    observer.next(removedConcert);
-                }
-                observer.complete();
-            }, randomNum(this.min, this.max));
-        });
+    public deleteConcert(id: number): Observable<void> {
+        return this.http.delete<void>(`${environment.BASE_URL}/concerts/${id}`).pipe(tap(_ => {
+            this.getAll().subscribe();
+        }));
     }
 }
 
