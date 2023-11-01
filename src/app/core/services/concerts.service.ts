@@ -59,23 +59,9 @@ export class ConcertsService implements CrudConcerts {
      * @returns Observable<Concert>
      */
     public updateConcert(concert: Concert): Observable<Concert> {
-        console.log("Entra en updateConcert(cncert: Concert)");
-        return new Observable(observer => {
-            setTimeout(() => {
-                var _concerts = [...this._concerts.value];
-                var index = _concerts.findIndex(u => u.id == concert.id);
-                if (index < 0)
-                    observer.error(new ConcertNotFoundException());
-                else {
-                    // TODO esto hay que quitarlo, es para que no se borre la imagen al hacer update
-                    concert.image = _concerts[index].image;
-                    _concerts[index] = concert;
-                    observer.next(concert);
-                    this._concerts.next(_concerts);
-                }
-                observer.complete();
-            }, randomNum(this.min, this.max));
-        });
+        return this.http.put<Concert>(`${environment.BASE_URL}/concerts/${concert.id}`, concert).pipe(tap(_ => {
+            this.getAll().subscribe();
+        }));
     }
 
     /**
