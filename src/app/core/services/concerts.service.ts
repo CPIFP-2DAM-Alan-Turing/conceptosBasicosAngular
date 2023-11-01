@@ -39,17 +39,7 @@ export class ConcertsService implements CrudConcerts {
      * @returns Observable<Concert>
      */
     public getConcert(id: number): Observable<Concert> {
-        console.log("Entra en getConcert(id)");
-        return new Observable(observer => {
-            setTimeout(() => {
-                var concert = this._concerts.value.find(concert => concert.id == id);
-                if (concert)
-                    observer.next(concert);
-                else
-                    observer.error(new ConcertNotFoundException());
-                observer.complete();
-            }, randomNum(this.min, this.max));
-        });
+        return this.http.get<Concert>(`${environment.BASE_URL}/concerts/${id}`);
     }
 
     /**
