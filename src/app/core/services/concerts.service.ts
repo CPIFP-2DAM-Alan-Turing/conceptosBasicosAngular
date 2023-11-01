@@ -1,6 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { concertsData } from '../data/concert-data';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Concert } from '../models/concert.model';
 
 interface CrudConcerts {
@@ -20,22 +21,16 @@ export class ConcertsService implements CrudConcerts {
     private min = 0;     // Var for min delay in loading data
     private max = 2000;  // Var for max delay in loading data
 
-    constructor() { }
+    constructor(private http: HttpClient) { }
 
     /**
      * Return an observable with a list of all the concerts.
      * @returns Observable<Concert[]> 
      */
     public getAll(): Observable<Concert[]> {
-        console.log("Entra en getAll()");
-        return new Observable(observer => {
-            setTimeout(() => {
-                var concerts = concertsData;
-                this._concerts.next(concerts);
-                observer.next(concerts);
-                observer.complete();
-            }, randomNum(this.min, this.max));
-        });
+        return this.http.get<Concert[]>(`${environment.BASE_URL}/concerts`).pipe(tap(res => {
+            this._concerts.next(res);
+        }));
     }
 
     /**
