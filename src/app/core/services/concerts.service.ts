@@ -17,11 +17,10 @@ interface CrudConcerts {
 export class ConcertsService implements CrudConcerts {
     private _concerts: BehaviorSubject<Concert[]> = new BehaviorSubject<Concert[]>([]);
     public concerts$: Observable<Concert[]> = this._concerts.asObservable();
-    public id = 50;      // There are 50 concerts in the initial list
-    private min = 0;     // Var for min delay in loading data
-    private max = 2000;  // Var for max delay in loading data
 
-    constructor(private http: HttpClient) { }
+    constructor(
+        private http: HttpClient
+    ) { }
 
     /**
      * Return an observable with a list of all the concerts.
@@ -74,24 +73,4 @@ export class ConcertsService implements CrudConcerts {
             this.getAll().subscribe();
         }));
     }
-}
-
-
-/**
- * Class for exception for concert not found
- */
-export class ConcertNotFoundException extends Error {
-    // . declare any additional properties or methods .
-}
-
-/**
- * Generate a random number between the two numbers passed as parameters
- * @param min Min value
- * @param max Max value
- * @returns number
- */
-function randomNum(min: number, max: number): number {
-    const time = (Math.floor(Math.random() * (max - min) + min));
-    console.log("Delay: ", time);
-    return time;
 }
