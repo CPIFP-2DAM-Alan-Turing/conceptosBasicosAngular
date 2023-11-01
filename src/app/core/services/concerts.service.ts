@@ -48,16 +48,9 @@ export class ConcertsService implements CrudConcerts {
      * @returns Observable<Concert>
      */
     public addConcert(concert: Concert): Observable<Concert> {
-        console.log("Entra en createConcert(concert: Concert)");
-        return new Observable<Concert>(observer => {
-            setTimeout(() => {
-                var _concerts = [...this._concerts.value];
-                concert.id = ++this.id;
-                _concerts.push(concert);
-                this._concerts.next(_concerts);
-                observer.next(concert);
-            }, randomNum(this.min, this.max));
-        });
+        return this.http.post<Concert>(`${environment.BASE_URL}/concerts`, concert).pipe(tap(_ => {
+            this.getAll().subscribe();
+        }));
     }
 
     /**
