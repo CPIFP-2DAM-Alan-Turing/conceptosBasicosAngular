@@ -10,7 +10,7 @@ export class ArtistsPage implements OnInit {
     loading = false;
 
     constructor(
-        private router: Router
+        private router: Router,
     ) { }
 
     ngOnInit() {
