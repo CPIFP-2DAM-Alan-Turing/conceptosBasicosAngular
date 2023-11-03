@@ -9,6 +9,7 @@ import { ArtistsService } from 'src/app/core/services/artists.service';
 })
 export class ArtistsPage implements OnInit {
     loading = false;
+    toggleState: boolean = false;
 
     constructor(
         private router: Router,
@@ -24,5 +25,19 @@ export class ArtistsPage implements OnInit {
 
     home() {
         this.router.navigate(['/home']);
+    }
+
+    availableChanged() {
+        console.log("AvailableChanged", this.toggleState);
+        this.loading = true;
+        if (this.toggleState) {
+            this.artistsService.getAvailables().subscribe(artist => {
+                this.loading = false;
+            });
+        } else {
+            this.artistsService.getAll().subscribe(artist => {
+                this.loading = false;
+            });
+        }
     }
 }

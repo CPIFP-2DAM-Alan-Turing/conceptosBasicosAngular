@@ -8,6 +8,7 @@ import { Artist } from 'src/app/core/models/artist.model';
 })
 export class ArtistInfoComponent implements OnInit {
     @Input() artist?: Artist;
+
     constructor() { }
 
     ngOnInit() { }

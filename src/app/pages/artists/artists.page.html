@@ -2,7 +2,7 @@
     <ion-toolbar>
         <ion-title>Artistas</ion-title>
         <ion-buttons slot="end">
-            <ion-toggle labelPlacement="end">Disponible</ion-toggle>
+            <ion-toggle labelPlacement="end" (ionChange)="availableChanged()" [(ngModel)]="toggleState">Disponible</ion-toggle>
             <ion-button (click)="home()">Inicio</ion-button>
         </ion-buttons>
     </ion-toolbar>

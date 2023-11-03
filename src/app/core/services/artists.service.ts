@@ -13,9 +13,9 @@ export class ArtistsService {
     constructor() { }
 
     /**
- * Return an observable with a list of all the artists.
- * @returns Observable<Artist[]>
- */
+    * Return an observable with a list of all the artists.
+    * @returns Observable<Artist[]>
+    */
     public getAll(): Observable<Artist[]> {
         return new Observable(observer => {
             setTimeout(() => {
@@ -26,6 +26,22 @@ export class ArtistsService {
             }, 1000);
         })
     }
+
+    /**
+* Return an observable with a list of the availables artists.
+* @returns Observable<Artist[]>
+*/
+    public getAvailables(): Observable<Artist[]> {
+        return new Observable(observer => {
+            setTimeout(() => {
+                var artists: Artist[] = artistsData.filter(artist => artist.available == true);
+                this._artists.next(artists);
+                observer.next(artists);
+                observer.complete();
+            }, 1000);
+        })
+    }
+
 }
 
 
