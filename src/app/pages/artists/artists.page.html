@@ -1,13 +1,12 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>artists</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-header [translucent]="true" sm>
     <ion-toolbar>
-      <ion-title size="large">artists</ion-title>
+        <ion-title>Artistas</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="home()">Inicio</ion-button>
+        </ion-buttons>
     </ion-toolbar>
-  </ion-header>
+</ion-header>
+<ion-content>
 </ion-content>
+
+<ion-loading [isOpen]="loading" spinner="bubbles" message="Cargando..."></ion-loading>
