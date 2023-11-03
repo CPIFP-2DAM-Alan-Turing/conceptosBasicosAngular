@@ -2,12 +2,13 @@
     <ion-toolbar>
         <ion-title>Artistas</ion-title>
         <ion-buttons slot="end">
+            <ion-toggle labelPlacement="end">Disponible</ion-toggle>
             <ion-button (click)="home()">Inicio</ion-button>
         </ion-buttons>
     </ion-toolbar>
 </ion-header>
 <ion-content>
-    <ion-row>
+    <ion-row id="cards-container">
         <app-artist-info *ngFor="let artist of artistsService.artists$|async" [artist]="artist"></app-artist-info>
     </ion-row>
 </ion-content>
