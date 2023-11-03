@@ -1,3 +1,21 @@
-<p>
-  artist-info works!
-</p>
+<ion-card>
+    <ion-card-header color="light">
+        <ion-card-title>{{ artist?.name }}</ion-card-title>
+        <ion-card-subtitle>{{artist?.genre}}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+        <ion-item>Seguidores: {{artist?.numFollowers}} K</ion-item>
+        <ion-item>Caché: {{artist?.cache}} €</ion-item>
+        <ion-item *ngIf="artist?.available" color="success">
+            <ion-icon name="checkmark-outline" size="large"></ion-icon>
+            Disponible
+        </ion-item>
+        <ion-item *ngIf="!artist?.available" color="danger">
+            <ion-icon name="close-outline" size="large"></ion-icon>
+            No disponible
+        </ion-item>
+    </ion-card-content>
+
+    <ion-button fill="clear" expand="full">Action</ion-button>
+</ion-card>

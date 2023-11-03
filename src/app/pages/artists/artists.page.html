@@ -7,7 +7,9 @@
     </ion-toolbar>
 </ion-header>
 <ion-content>
-    <app-artist-info *ngFor="let artist of artistsService.artists$|async"></app-artist-info>
+    <ion-row>
+        <app-artist-info *ngFor="let artist of artistsService.artists$|async" [artist]="artist"></app-artist-info>
+    </ion-row>
 </ion-content>
 
 <ion-loading [isOpen]="loading" spinner="bubbles" message="Cargando..."></ion-loading>
