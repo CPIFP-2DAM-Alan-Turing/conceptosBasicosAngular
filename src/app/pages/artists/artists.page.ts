@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ArtistsService } from 'src/app/core/services/artists.service';
 
 @Component({
     selector: 'app-artists',
@@ -11,9 +12,14 @@ export class ArtistsPage implements OnInit {
 
     constructor(
         private router: Router,
+        public artistsService: ArtistsService
     ) { }
 
     ngOnInit() {
+        this.loading = true;
+        this.artistsService.getAll().subscribe(artist => {
+            this.loading = false;
+        });
     }
 
     home() {
