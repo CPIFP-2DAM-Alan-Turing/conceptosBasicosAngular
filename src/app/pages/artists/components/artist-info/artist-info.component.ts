@@ -14,8 +14,10 @@ export class ArtistInfoComponent implements OnInit {
 
     ngOnInit() { }
 
+    /**
+     * Activate onCardClicked EventEmitter.
+     */
     onCardClick() {
-        console.log("onCardClick");
         this.onCardClicked.emit();
     }
 }

@@ -36,14 +36,14 @@ export class ArtistsPage implements OnInit, ArtistsInterface {
     }
 
     /**
-    * Navigate to home page
+    * Navigate to home page.
     */
     home() {
         this.router.navigate(['/home']);
     }
 
     /**
-     * Update the artists list if toggle available is changed
+     * Update the artists list if toggle available is changed.
      */
     availableChanged() {
         this.loading = true;
@@ -59,8 +59,8 @@ export class ArtistsPage implements OnInit, ArtistsInterface {
     }
 
     /**
-     * Add new Artist
-     * @param $event
+     * Add new Artist.
+     * @param $event Mouse Event.
      */
     onAddArtistClick($event: MouseEvent) {
         console.log("onAddArtistClick");
@@ -81,8 +81,8 @@ export class ArtistsPage implements OnInit, ArtistsInterface {
     }
 
     /**
-     * Open a modal window with the detail of the artist
-     * @param artist
+     * Open a modal window with the detail of the artist.
+     * @param artist Artist to show the data.
      */
     onCardClicked(artist: Artist) {
         console.log("onCardClicked");
@@ -101,8 +101,8 @@ export class ArtistsPage implements OnInit, ArtistsInterface {
     }
 
     /**
-     * Update the artist data
-     * @param data
+     * Update the artist data passed by parameter.
+     * @param data Data to update.
      */
     onUpdate(data: any) {
         this.artistsService.updateArtist(data, this.toggleState).subscribe({
@@ -116,7 +116,8 @@ export class ArtistsPage implements OnInit, ArtistsInterface {
     }
 
     /**
-     * Delete the artist
+     * Delete the artist passed by parameter.
+     * @param artist Artist to delete.
      */
     onDeleteClicked(artist: Artist) {
         this.artistsService.deleteArtist(artist.id, this.toggleState).subscribe({
@@ -130,9 +131,9 @@ export class ArtistsPage implements OnInit, ArtistsInterface {
     }
 
     /**
-     * Create the modal form of artists
-     * @param data
-     * @param onDismiss
+     * Create the modal form of artists.
+     * @param data Artist to show in the modal.
+     * @param onDismiss Data to onDismiss function.
      */
     async presentForm(data: Artist | null, onDismiss: (data: any) => void) {
         const form = await this.form.create({

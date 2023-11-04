@@ -41,21 +41,21 @@ export class ArtistFormComponent implements OnInit {
     ngOnInit() { }
 
     /**
-     * Submit the form with the artist data
+     * Submit the form with the artist data.
      */
     onSubmit() {
         this.formModal.dismiss(this.form.value, "submit");
     }
 
     /**
-     * Delete artist
+     * Delete artist.
      */
     onDelete() {
         this.formModal.dismiss(this.form.value, "delete");
     }
 
     /**
-     * Cancel the updates in modal form
+     * Cancel the updates in modal form.
      */
     onCancel() {
         this.formModal.dismiss(undefined, "cancel");
