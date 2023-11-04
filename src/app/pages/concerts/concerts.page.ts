@@ -61,6 +61,7 @@ export class ConcertsPage implements OnInit, ConcertsInterface {
             componentProps: {
                 concert: data
             },
+            cssClass: "modal-60vw"
         });
         form.present();
         form.onDidDismiss().then(result => {

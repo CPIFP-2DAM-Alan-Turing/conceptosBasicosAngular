@@ -33,3 +33,14 @@
     box-shadow: 0 0 0 3px var(--ion-color-medium-tint);
     transform: translateY(-10px);
 }
+
+.modal-60vw-50vh{
+    --width: 60vw;
+    --height: 50vh;
+    --min-width:500px;
+}
+
+.modal-60vw{
+    --width: 60vw;
+    --min-width:500px;
+}

@@ -140,6 +140,7 @@ export class ArtistsPage implements OnInit, ArtistsInterface {
             componentProps: {
                 artist: data
             },
+            cssClass: "modal-60vw-50vh"
         });
         form.present();
         form.onDidDismiss().then(result => {

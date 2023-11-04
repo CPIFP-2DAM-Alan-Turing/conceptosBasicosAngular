@@ -1,48 +1,51 @@
-<ion-header class="ion-no-border">
-    <ion-toolbar>
-        <ion-buttons slot="start">
-            <ion-button color="primary" fill="clear" (click)="onCancel()">
-                <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
-            </ion-button>
-        </ion-buttons>
-        <ion-title> {{ artistName }} </ion-title>
-        <ion-buttons slot="end">
-            <ion-button color="danger" (click)="onDelete()">
-                <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
-            </ion-button>
-        </ion-buttons>
-    </ion-toolbar>
-</ion-header>
+<div class="form">
 
-<ion-content class="ion-padding">
-    <form [formGroup]="form">
-        <ion-row>
-            <ion-col size="12">
-                <ion-input type="text" label="Nombre del artista" labelPlacement="floating" fill="outline"
-                    placeholder="Ej. Michael Jackson" formControlName="name"></ion-input>
-            </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col size="3">
-                <ion-input type="text" label="Género musical" labelPlacement="floating" fill="outline"
-                    placeholder="Introduce el género musical" formControlName="genre" autoGrow="true"></ion-input>
-            </ion-col>
-            <ion-col size="3">
-                <ion-input type="number" label="Número de seguidores" labelPlacement="floating" fill="outline"
-                    formControlName="numFollowers"></ion-input>
-            </ion-col>
-            <ion-col size="3">
-                <ion-input type="number" label="Caché" labelPlacement="floating" fill="outline"
-                    formControlName="cache"></ion-input>
-            </ion-col>
-            <ion-col size="3" class="container">
-                <ion-checkbox labelPlacement="end" formControlName="available">Disponible</ion-checkbox>
-            </ion-col>
-        </ion-row>
-    </form>
-</ion-content>
-<ion-footer>
-    <ion-button type="submit" (click)="onSubmit()" class="ion-padding" expand="full">
-        Aceptar
-    </ion-button>
-</ion-footer>
+    <ion-header class="ion-no-border">
+        <ion-toolbar>
+            <ion-buttons slot="start">
+                <ion-button color="primary" fill="clear" (click)="onCancel()">
+                    <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+                </ion-button>
+            </ion-buttons>
+            <ion-title> {{ artistName }} </ion-title>
+            <ion-buttons slot="end">
+                <ion-button color="danger" (click)="onDelete()">
+                    <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+                </ion-button>
+            </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+        <form [formGroup]="form">
+            <ion-row>
+                <ion-col size="12">
+                    <ion-input type="text" label="Nombre del artista" labelPlacement="floating" fill="outline"
+                        placeholder="Ej. Michael Jackson" formControlName="name"></ion-input>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="3">
+                    <ion-input type="text" label="Género musical" labelPlacement="floating" fill="outline"
+                        placeholder="Introduce el género musical" formControlName="genre" autoGrow="true"></ion-input>
+                </ion-col>
+                <ion-col size="3">
+                    <ion-input type="number" label="Número de seguidores" labelPlacement="floating" fill="outline"
+                        formControlName="numFollowers"></ion-input>
+                </ion-col>
+                <ion-col size="3">
+                    <ion-input type="number" label="Caché" labelPlacement="floating" fill="outline"
+                        formControlName="cache"></ion-input>
+                </ion-col>
+                <ion-col size="3" class="container">
+                    <ion-checkbox labelPlacement="end" formControlName="available">Disponible</ion-checkbox>
+                </ion-col>
+            </ion-row>
+        </form>
+    </ion-content>
+    <ion-footer>
+        <ion-button type="submit" (click)="onSubmit()" class="ion-padding" expand="full">
+            Aceptar
+        </ion-button>
+    </ion-footer>
+</div>
