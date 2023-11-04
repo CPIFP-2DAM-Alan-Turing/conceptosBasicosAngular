@@ -59,21 +59,9 @@ export class ArtistsService {
      * @returns Observable<Concert>
      */
     public updateArtist(artist: Artist): Observable<Artist> {
-        console.log("updateArtist")
-        return new Observable(observer => {
-            setTimeout(() => {
-                var _artists = [...this._artists.value];
-                var index = _artists.findIndex(a => a.id == artist.id);
-                if (index < 0)
-                    observer.error(new ArtistNotFoundException());
-                else {
-                    _artists[index] = artist;
-                    observer.next(artist);
-                    this._artists.next(_artists);
-                }
-                observer.complete();
-            }, 500);
-        });
+        return this.http.put<Artist>(`${environment.BASE_URL}/artists/${artist.id}`, artist).pipe(tap(_ => {
+            this.getAll().subscribe();
+        }));
     }
 
     /**
