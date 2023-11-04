@@ -45,21 +45,20 @@ export class ArtistFormComponent implements OnInit {
      * Submit the form with the artist data
      */
     onSubmit() {
-        throw new Error('Method not implemented.');
+        this.formModal.dismiss(this.form.value, "submit");
     }
 
     /**
      * Delete artist
      */
     onDelete() {
-        throw new Error('Method not implemented.');
+        this.formModal.dismiss(this.form.value, "delete");
     }
 
     /**
      * Cancel the updates in modal form
      */
     onCancel() {
-        throw new Error('Method not implemented.');
+        this.formModal.dismiss(undefined, "cancel");
     }
-
 }

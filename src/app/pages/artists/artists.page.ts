@@ -90,7 +90,7 @@ export class ArtistsPage implements OnInit {
         const form = await this.form.create({
             component: ArtistFormComponent,
             componentProps: {
-                concert: data
+                artist: data
             },
         });
         form.present();
