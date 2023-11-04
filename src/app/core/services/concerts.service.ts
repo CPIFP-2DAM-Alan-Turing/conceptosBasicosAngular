@@ -73,4 +73,9 @@ export class ConcertsService implements CrudConcerts {
             this.getAll().subscribe();
         }));
     }
+
+    public query(q:string):Observable<Concert[]>{
+        // Si coincide el tipo de datos que recibo con mi interfaz
+        return this.http.get<Concert[]>(`${environment.BASE_URL}/concerts?q=${q}`);
+      }
 }

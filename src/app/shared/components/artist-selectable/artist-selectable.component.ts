@@ -73,9 +73,7 @@ export class ArtistSelectableComponent implements OnInit, ControlValueAccessor {
      * Not implemented.
      * @param fn
      */
-    registerOnTouched(fn: any): void {
-        throw new Error('Method not implemented.');
-    }
+    registerOnTouched(fn: any): void {}
 
     /**
      * Change the value of disabled.

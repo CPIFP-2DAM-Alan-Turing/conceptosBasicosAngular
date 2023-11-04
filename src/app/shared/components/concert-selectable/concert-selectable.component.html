@@ -1,0 +1,50 @@
+<ion-item id="popover-button" [button]="!disabled" [detail]="!disabled">
+  <ion-text slot="start" position="fixed"> Concierto: </ion-text>
+  <!-- Mostrar la selección -->
+  <ion-text *ngIf="!concertSelected && !disabled">
+    Seleccione un concierto
+  </ion-text>
+  <ion-text *ngIf="!concertSelected && disabled"> Ninguno </ion-text>
+  <ion-text *ngIf="concertSelected"> {{ concertSelected.name }} </ion-text>
+</ion-item>
+
+<ion-popover
+  *ngIf="!disabled"
+  trigger="popover-button"
+  #popover
+  (willPresent)="onLoadConcerts()"
+>
+  <ng-template>
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <ion-input
+            #search
+            placeholder="Buscar"
+            type="text"
+            (ionInput)="onFilter($event)"
+            debounce="200"
+          />
+
+          <ion-button
+            color="medium"
+            slot="end"
+            fill="clear"
+            (click)="clearSearch(search)"
+          >
+            <ion-icon slot="icon-only" name="close-outline" />
+          </ion-button>
+        </ion-item>
+
+        <ion-item button (click)="deselect(popover)">
+          <ion-text>Ninguno</ion-text>
+        </ion-item>
+        <app-concert-selectable-item
+          (clicked)="onConcertClicked(popover, $event)"
+          *ngFor="let concert of concerts"
+          [concert]="concert"
+        />
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-popover>
