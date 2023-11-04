@@ -1,4 +1,4 @@
-<ion-card appButtonEffect>
+<ion-card appButtonEffect (click)="onCardClick()">
     <ion-card-header color="light">
         <ion-card-title>{{ artist?.name }}</ion-card-title>
         <ion-card-subtitle>{{artist?.genre}}</ion-card-subtitle>
@@ -16,6 +16,4 @@
             No disponible
         </ion-item>
     </ion-card-content>
-
-    <ion-button fill="clear" expand="full">Action</ion-button>
 </ion-card>

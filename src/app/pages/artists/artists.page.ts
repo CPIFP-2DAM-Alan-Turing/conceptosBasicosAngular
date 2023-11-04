@@ -18,7 +18,7 @@ interface ArtistsInterface {
     styleUrls: ['./artists.page.scss'],
 })
 
-export class ArtistsPage implements OnInit {
+export class ArtistsPage implements OnInit, ArtistsInterface {
     loading = false;
     toggleState: boolean = false;
 
@@ -60,7 +60,7 @@ export class ArtistsPage implements OnInit {
 
     /**
      * Add new Artist
-     * @param $event 
+     * @param $event
      */
     onAddArtistClick($event: MouseEvent) {
         console.log("onAddArtistClick");
@@ -80,6 +80,40 @@ export class ArtistsPage implements OnInit {
         event?.stopPropagation();
     }
 
+    /**
+     * Open a modal window with the detail of the artist
+     * @param artist
+     */
+    onCardClicked(artist: Artist) {
+        console.log("onCardClicked");
+        let onDismiss = (res: any) => {
+            switch (res.role) {
+                case "submit":
+                    this.onUpdate(res.data);
+                    break;
+                case "delete":
+                    this.onDeleteClicked(res.data);
+                    break;
+                default:
+            }
+        }
+        this.presentForm(artist, onDismiss);
+    }
+
+    /**
+     * Update the artist data
+     * @param data
+     */
+    onUpdate(data: any) {
+        throw new Error('Method not implemented.');
+    }
+
+    /**
+     * Delete the artist
+     */
+    onDeleteClicked(artist: Artist) {
+        throw new Error('Method not implemented.');
+    }
 
     /**
      * Create the modal form of artists

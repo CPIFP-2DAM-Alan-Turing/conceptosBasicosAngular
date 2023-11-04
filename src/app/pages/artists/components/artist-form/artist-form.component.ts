@@ -39,8 +39,6 @@ export class ArtistFormComponent implements OnInit {
 
     ngOnInit() { }
 
-
-
     /**
      * Submit the form with the artist data
      */
