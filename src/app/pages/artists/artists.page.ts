@@ -17,6 +17,7 @@ interface ArtistsInterface {
     templateUrl: './artists.page.html',
     styleUrls: ['./artists.page.scss'],
 })
+
 export class ArtistsPage implements OnInit {
     loading = false;
     toggleState: boolean = false;
@@ -34,10 +35,16 @@ export class ArtistsPage implements OnInit {
         });
     }
 
+    /**
+    * Navigate to home page
+    */
     home() {
         this.router.navigate(['/home']);
     }
 
+    /**
+     * Update the artists list if toggle available is changed
+     */
     availableChanged() {
         this.loading = true;
         if (this.toggleState) {
@@ -51,6 +58,10 @@ export class ArtistsPage implements OnInit {
         }
     }
 
+    /**
+     * Add new Artist
+     * @param $event 
+     */
     onAddArtistClick($event: MouseEvent) {
         console.log("onAddArtistClick");
         let onDismiss = ((res: any) => {

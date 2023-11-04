@@ -5,6 +5,7 @@ import { ArtistsPageRoutingModule } from './artists-routing.module';
 import { ArtistsPage } from './artists.page';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ArtistInfoComponent } from './components/artist-info/artist-info.component';
+import { ArtistFormComponent } from './components/artist-form/artist-form.component';
 
 @NgModule({
     imports: [
@@ -15,6 +16,7 @@ import { ArtistInfoComponent } from './components/artist-info/artist-info.compon
     declarations: [
         // Components
         ArtistInfoComponent,
+        ArtistFormComponent,
         // Pages
         ArtistsPage,
     ]
