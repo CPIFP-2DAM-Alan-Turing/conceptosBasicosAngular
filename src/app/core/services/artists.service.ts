@@ -47,16 +47,9 @@ export class ArtistsService {
     * @returns Observable<Artist>
     */
     public addArtist(artist: Artist): Observable<Artist> {
-        return new Observable(observer => {
-            setTimeout(() => {
-                artist.id = ++this.id;
-                var _artists = [...this._artists.value];
-                _artists.push(artist);
-                this._artists.next(_artists);
-                observer.next(artist);
-                observer.complete();
-            }, 1000);
-        });
+        return this.http.post<Artist>(`${environment.BASE_URL}/artists`, artist).pipe(tap(_ => {
+            this.getAll().subscribe();
+        }));
     }
 
 
