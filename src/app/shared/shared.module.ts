@@ -4,13 +4,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { ButtonEffectDirective } from './directives/button-effect.directive';
 import { ArtistSelectableComponent } from './components/artist-selectable/artist-selectable.component';
+import { ArtistItemComponent } from './components/artist-item/artist-item.component';
 
 @NgModule({
   declarations: [
     // Directives
     ButtonEffectDirective,
     // Components
-    ArtistSelectableComponent
+    ArtistSelectableComponent,
+    ArtistItemComponent,
   ],
   imports: [
     // Modules
@@ -28,7 +30,8 @@ import { ArtistSelectableComponent } from './components/artist-selectable/artist
     // Directives
     ButtonEffectDirective,
     // Components
-    ArtistSelectableComponent
+    ArtistSelectableComponent,
+    ArtistItemComponent,
   ]
 })
 export class SharedModule { }
