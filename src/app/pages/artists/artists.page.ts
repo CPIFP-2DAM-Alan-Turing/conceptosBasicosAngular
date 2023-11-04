@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
+import { zip } from 'rxjs';
 import { Artist } from 'src/app/core/models/artist.model';
+import { Assignment } from 'src/app/core/models/assignment.model';
 import { ArtistsService } from 'src/app/core/services/artists.service';
+import { AssignmentsService } from 'src/app/core/services/assignments.service';
 import { ArtistFormComponent } from './components/artist-form/artist-form.component';
 
 interface ArtistsInterface {
@@ -25,7 +28,8 @@ export class ArtistsPage implements OnInit, ArtistsInterface {
     constructor(
         private router: Router,
         public artistsService: ArtistsService,
-        private form: ModalController
+        private form: ModalController,
+        private assignmentsService: AssignmentsService
     ) { }
 
     ngOnInit() {
@@ -62,7 +66,7 @@ export class ArtistsPage implements OnInit, ArtistsInterface {
      * Add new Artist.
      * @param $event Mouse Event.
      */
-    onAddArtistClick($event: MouseEvent) {
+    onAddArtistClick(event: any) {
         console.log("onAddArtistClick");
         let onDismiss = ((res: any) => {
             if (res.role = "submit") {
@@ -77,7 +81,7 @@ export class ArtistsPage implements OnInit, ArtistsInterface {
             }
         })
         this.presentForm(null, onDismiss);
-        event?.stopPropagation();
+        event.stopPropagation();
     }
 
     /**
@@ -105,14 +109,29 @@ export class ArtistsPage implements OnInit, ArtistsInterface {
      * @param data Data to update.
      */
     onUpdate(data: any) {
-        this.artistsService.updateArtist(data, this.toggleState).subscribe({
-            next: res => {
-                console.log(res);
-            },
-            error: err => {
-                console.error(err);
-            }
-        });
+        let assignment: Assignment = {
+            id: data.assignmentId,
+            concert_id: data.concertId,
+            artist_id: data.id
+        }
+        let artist: Artist = {
+            id: data.id,
+            name: data.name,
+            genre: data.genre,
+            numFollowers: data.numFollowers,
+            cache: data.cache,
+            available: data.available
+        }
+        zip(this.artistsService.updateArtist(artist, this.toggleState),
+            this.assignmentsService.updateAssignment(assignment))
+            .subscribe({
+                next: res => {
+                    console.log(res);
+                },
+                error: err => {
+                    console.error(err);
+                }
+            });
     }
 
     /**
@@ -135,17 +154,22 @@ export class ArtistsPage implements OnInit, ArtistsInterface {
      * @param data Artist to show in the modal.
      * @param onDismiss Data to onDismiss function.
      */
-    async presentForm(data: Artist | null, onDismiss: (data: any) => void) {
-        const form = await this.form.create({
-            component: ArtistFormComponent,
-            componentProps: {
-                artist: data
-            },
-            cssClass: "modal-60vw-50vh"
-        });
-        form.present();
-        form.onDidDismiss().then(result => {
-            onDismiss(result);
+    presentForm(data: Artist | null, onDismiss: (data: any) => void) {
+        this.assignmentsService.getAll().subscribe(async res => {
+            let assignment = res.find(a => a.artist_id === data?.id)
+
+            const form = await this.form.create({
+                component: ArtistFormComponent,
+                componentProps: {
+                    artist: data,
+                    assignment: assignment
+                },
+                cssClass: "modal-60vw-50vh"
+            });
+            form.present();
+            form.onDidDismiss().then(result => {
+                onDismiss(result);
+            });
         });
     }
 }

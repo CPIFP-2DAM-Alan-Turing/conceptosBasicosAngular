@@ -7,7 +7,7 @@
                     <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
                 </ion-button>
             </ion-buttons>
-            <ion-title> {{ artistName }} </ion-title>
+            <ion-title> {{ artist.name }} </ion-title>
             <ion-buttons slot="end">
                 <ion-button color="danger" (click)="onDelete()">
                     <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
@@ -41,6 +41,8 @@
                     <ion-checkbox labelPlacement="end" formControlName="available">Disponible</ion-checkbox>
                 </ion-col>
             </ion-row>
+            <input type="number" hidden formControlName="assignmentId"/>
+            <app-concert-selectable formControlName="concertId" [artist]="artist"/>
         </form>
     </ion-content>
     <ion-footer>
