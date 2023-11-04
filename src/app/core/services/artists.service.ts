@@ -58,9 +58,9 @@ export class ArtistsService {
      * @param artist Artist with the data to update
      * @returns Observable<Concert>
      */
-    public updateArtist(artist: Artist): Observable<Artist> {
+    public updateArtist(artist: Artist, toggle:boolean): Observable<Artist> {
         return this.http.put<Artist>(`${environment.BASE_URL}/artists/${artist.id}`, artist).pipe(tap(_ => {
-            this.getAll().subscribe();
+            toggle == false ? this.getAll().subscribe() : this.getAvailables().subscribe();
         }));
     }
 
@@ -69,9 +69,11 @@ export class ArtistsService {
      * @param id Artist id
      * @returns Observable<Artist>
      */
-    public deleteConcert(id: number)
-    //: Observable<void> 
-    {
+    public deleteArtist(id: number, toggle: boolean): Observable<void> {
+        console.log("Toggle: " + toggle);
+        return this.http.delete<void>(`${environment.BASE_URL}/artists/${id}`).pipe(tap(_ => {
+            toggle == false ? this.getAll().subscribe() : this.getAvailables().subscribe();
+        }));
     }
 }
 

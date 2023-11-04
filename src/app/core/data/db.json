@@ -1215,14 +1215,6 @@
       "numFollowers": 5500,
       "cache": 6000,
       "available": false
-    },
-    {
-      "id": 31,
-      "name": "Queen",
-      "genre": "Rock",
-      "numFollowers": 8000,
-      "cache": 4500,
-      "available": false
     }
   ]
 }

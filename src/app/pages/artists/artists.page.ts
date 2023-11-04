@@ -105,7 +105,7 @@ export class ArtistsPage implements OnInit, ArtistsInterface {
      * @param data
      */
     onUpdate(data: any) {
-        this.artistsService.updateArtist(data).subscribe({
+        this.artistsService.updateArtist(data, this.toggleState).subscribe({
             next: res => {
                 console.log(res);
             },
@@ -119,7 +119,14 @@ export class ArtistsPage implements OnInit, ArtistsInterface {
      * Delete the artist
      */
     onDeleteClicked(artist: Artist) {
-        throw new Error('Method not implemented.');
+        this.artistsService.deleteArtist(artist.id, this.toggleState).subscribe({
+            next: res => {
+                console.log(res);
+            },
+            error: err => {
+                console.error(err);
+            }
+        });
     }
 
     /**
