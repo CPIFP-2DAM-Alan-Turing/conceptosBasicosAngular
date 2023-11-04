@@ -1,132 +1,59 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button color="primary" fill="clear" (click)="onCancel()">
-        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-title> {{ concertName }} </ion-title>
-    <ion-buttons slot="end">
-      <ion-button color="danger" (click)="onDelete()">
-        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button color="primary" fill="clear" (click)="onCancel()">
+                <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title> {{ concertName }} </ion-title>
+        <ion-buttons slot="end">
+            <ion-button color="danger" (click)="onDelete()">
+                <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <form [formGroup]="form">
-    <ion-input
-      type="text"
-      label="Nombre del evento"
-      labelPlacement="floating"
-      fill="outline"
-      placeholder="Ej. Dynamic chart 2022"
-      formControlName="name"
-    ></ion-input>
-    <ion-textarea
-      label="Descripción"
-      labelPlacement="floating"
-      fill="outline"
-      placeholder="Introduce la descripción"
-      formControlName="description"
-      autoGrow="true"
-    ></ion-textarea>
+    <form [formGroup]="form">
+        <ion-input type="text" label="Nombre del evento" labelPlacement="floating" fill="outline"
+            placeholder="Ej. Dynamic chart 2022" formControlName="name"></ion-input>
+        <ion-textarea label="Descripción" labelPlacement="floating" fill="outline"
+            placeholder="Introduce la descripción" formControlName="description" autoGrow="true"></ion-textarea>
 
-    <ion-input
-      type="datetime-local"
-      label="Fecha del concierto"
-      labelPlacement="floating"
-      fill="outline"
-      formControlName="concertDate"
-    ></ion-input>
-    <ion-input
-      type="datetime-local"
-      label="Inicio de venta de entradas"
-      labelPlacement="floating"
-      fill="outline"
-      formControlName="ticketSaleDate"
-    ></ion-input>
+        <ion-input type="datetime-local" label="Fecha del concierto" labelPlacement="floating" fill="outline"
+            formControlName="concertDate"></ion-input>
+        <ion-input type="datetime-local" label="Inicio de venta de entradas" labelPlacement="floating" fill="outline"
+            formControlName="ticketSaleDate"></ion-input>
 
-    <ion-accordion-group>
-      <ion-accordion value="first">
-        <ion-item slot="header">
-          <ion-label> Editar ubicación del evento </ion-label>
-        </ion-item>
-        <ion-input
-          type="text"
-          slot="content"
-          label="Lugar donde se celebra"
-          labelPlacement="floating"
-          fill="outline"
-          placeholder="Ej. Hollywood Bowl"
-          formControlName="locationName"
-        ></ion-input>
-        <ion-input
-          type="text"
-          slot="content"
-          label="Tipo de dirección"
-          labelPlacement="floating"
-          fill="outline"
-          placeholder="Ej. Calle"
-          formControlName="locationAddressType"
-        ></ion-input>
-        <ion-input
-          type="text"
-          slot="content"
-          label="Dirección"
-          labelPlacement="floating"
-          fill="outline"
-          placeholder="Ej. 2301 N. Highland Ave."
-          formControlName="streetAddress"
-        ></ion-input>
-        <ion-input
-          type="text"
-          slot="content"
-          label="País"
-          labelPlacement="floating"
-          fill="outline"
-          placeholder="Ej. US"
-          formControlName="addressCountry"
-        ></ion-input>
-        <ion-input
-          type="text"
-          slot="content"
-          label="Localidad"
-          labelPlacement="floating"
-          fill="outline"
-          placeholder="Ej. Hollywood"
-          formControlName="addressLocality"
-        ></ion-input>
-        <ion-input
-          type="text"
-          slot="content"
-          label="Región"
-          labelPlacement="floating"
-          fill="outline"
-          placeholder="Ej. CA"
-          formControlName="addressRegion"
-        ></ion-input>
-        <ion-input
-          type="text"
-          slot="content"
-          label="CP"
-          labelPlacement="floating"
-          fill="outline"
-          placeholder="Ej. 90068"
-          formControlName="postalCode"
-        ></ion-input>
-      </ion-accordion>
-    </ion-accordion-group>
-  </form>
+        <ion-accordion-group>
+            <ion-accordion value="first">
+                <ion-item slot="header">
+                    <ion-label> Editar ubicación del evento </ion-label>
+                </ion-item>
+                <ion-input type="text" slot="content" label="Lugar donde se celebra" labelPlacement="floating"
+                    fill="outline" placeholder="Ej. Hollywood Bowl" formControlName="locationName"></ion-input>
+                <ion-input type="text" slot="content" label="Tipo de dirección" labelPlacement="floating" fill="outline"
+                    placeholder="Ej. Calle" formControlName="locationAddressType"></ion-input>
+                <ion-input type="text" slot="content" label="Dirección" labelPlacement="floating" fill="outline"
+                    placeholder="Ej. 2301 N. Highland Ave." formControlName="streetAddress"></ion-input>
+                <ion-input type="text" slot="content" label="País" labelPlacement="floating" fill="outline"
+                    placeholder="Ej. US" formControlName="addressCountry"></ion-input>
+                <ion-input type="text" slot="content" label="Localidad" labelPlacement="floating" fill="outline"
+                    placeholder="Ej. Hollywood" formControlName="addressLocality"></ion-input>
+                <ion-input type="text" slot="content" label="Región" labelPlacement="floating" fill="outline"
+                    placeholder="Ej. CA" formControlName="addressRegion"></ion-input>
+                <ion-input type="text" slot="content" label="CP" labelPlacement="floating" fill="outline"
+                    placeholder="Ej. 90068" formControlName="postalCode"></ion-input>
+            </ion-accordion>
+        </ion-accordion-group>
+    </form>
+    <app-artist-selectable>
+    </app-artist-selectable>
+
 </ion-content>
 <ion-footer>
-  <ion-button
-    type="submit"
-    (click)="onSubmit()"
-    class="ion-padding"
-    expand="full"
-  >
-    Aceptar
-  </ion-button>
+    <ion-button type="submit" (click)="onSubmit()" class="ion-padding" expand="full">
+        Aceptar
+    </ion-button>
 </ion-footer>

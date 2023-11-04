@@ -982,7 +982,7 @@
       "genre": "K-pop",
       "numFollowers": 6700,
       "cache": 5000,
-      "available": true
+      "available": false
     },
     {
       "id": 2,
@@ -1086,7 +1086,7 @@
       "genre": "Heavy metal",
       "numFollowers": 4800,
       "cache": 5000,
-      "available": false
+      "available": true
     },
     {
       "id": 15,
