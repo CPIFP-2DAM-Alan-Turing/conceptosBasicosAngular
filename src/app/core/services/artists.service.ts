@@ -3,6 +3,9 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Artist } from '../models/artist.model';
 import { artistsData } from '../data/artist-data';
 
+export class ArtistNotFoundException extends Error {
+}
+
 @Injectable({
     providedIn: 'root'
 })
@@ -60,7 +63,42 @@ export class ArtistsService {
             }, 1000);
         });
     }
+
+
+    /**
+     * Update artist data
+     * @param artist Artist with the data to update
+     * @returns Observable<Concert>
+     */
+    public updateArtist(artist: Artist): Observable<Artist> {
+        console.log("updateArtist")
+        return new Observable(observer => {
+            setTimeout(() => {
+                var _artists = [...this._artists.value];
+                var index = _artists.findIndex(a => a.id == artist.id);
+                if (index < 0)
+                    observer.error(new ArtistNotFoundException());
+                else {
+                    _artists[index] = artist;
+                    observer.next(artist);
+                    this._artists.next(_artists);
+                }
+                observer.complete();
+            }, 500);
+        });
+    }
+
+    /**
+     * Delete the artist with the id passed as a parameter
+     * @param id Artist id
+     * @returns Observable<Artist>
+     */
+    public deleteConcert(id: number)
+    //: Observable<void> 
+    {
+    }
 }
+
 
 
 

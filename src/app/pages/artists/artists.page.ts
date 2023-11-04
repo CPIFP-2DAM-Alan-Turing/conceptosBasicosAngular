@@ -105,7 +105,14 @@ export class ArtistsPage implements OnInit, ArtistsInterface {
      * @param data
      */
     onUpdate(data: any) {
-        throw new Error('Method not implemented.');
+        this.artistsService.updateArtist(data).subscribe({
+            next: res => {
+                console.log(res);
+            },
+            error: err => {
+                console.error(err);
+            }
+        });
     }
 
     /**
