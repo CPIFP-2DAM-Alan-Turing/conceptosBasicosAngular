@@ -45,22 +45,17 @@
     },
     {
       "id": 2,
-      "fav": false,
+      "name": "IShowSpeed",
       "description": "IShowSpeed at Hollywood Bowl",
-      "ticketSaleDate": "2022-12-20T00:00:00",
-      "concertDate": "2022-12-25T17:30:00",
-      "image": "https://images.sk-static.com/images/media/profile_images/artists/10185162/huge_avatar",
       "locationType": "Place",
-      "addressType": "PostalAddress",
+      "concertDate": "2022-12-25T17:30:00",
+      "ticketSaleDate": "2022-12-20T00:00:00",
       "addressCountry": "US",
       "addressLocality": "Hollywood",
       "addressRegion": "CA",
       "postalCode": "90068",
       "streetAddress": "2301 N. Highland Ave.",
-      "latitude": 34.11137,
-      "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "IShowSpeed"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 3,

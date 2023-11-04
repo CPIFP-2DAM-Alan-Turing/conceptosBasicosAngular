@@ -31,6 +31,15 @@ export class ArtistsService {
     }
 
     /**
+     * Get the artist passed by parameter
+     * @param id Id of the artist
+     * @returns Artist
+     */
+    public getArtist(id: number): Observable<Artist> {
+        return this.http.get<Artist>(environment.BASE_URL + `/artists/${id}`);
+    }
+
+    /**
     * Return an observable with a list of the availables artists.
     * @returns Observable<Artist[]>
     */
@@ -58,7 +67,7 @@ export class ArtistsService {
      * @param artist Artist with the data to update
      * @returns Observable<Concert>
      */
-    public updateArtist(artist: Artist, toggle:boolean): Observable<Artist> {
+    public updateArtist(artist: Artist, toggle: boolean): Observable<Artist> {
         return this.http.put<Artist>(`${environment.BASE_URL}/artists/${artist.id}`, artist).pipe(tap(_ => {
             toggle == false ? this.getAll().subscribe() : this.getAvailables().subscribe();
         }));
@@ -74,6 +83,16 @@ export class ArtistsService {
         return this.http.delete<void>(`${environment.BASE_URL}/artists/${id}`).pipe(tap(_ => {
             toggle == false ? this.getAll().subscribe() : this.getAvailables().subscribe();
         }));
+    }
+
+    /**
+     * Return the list of artists who includes in its name the query
+     * @param q Query to find
+     * @returns Array of artists
+     */
+    public query(q: string): Observable<Artist[]> {
+        // Si coincide el tipo de datos que recibo con mi interfaz
+        return this.http.get<Artist[]>(environment.BASE_URL + '/artists?q=' + q);
     }
 }
 
