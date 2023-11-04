@@ -42,7 +42,7 @@ export var artistsData: Artist[] = [
         available: false,
     },
     {
-        id: 1,
+        id: 6,
         name: 'Justin Bieber',
         genre: 'Pop',
         numFollowers: 3800,
@@ -50,7 +50,7 @@ export var artistsData: Artist[] = [
         available: true,
     },
     {
-        id: 2,
+        id: 7,
         name: 'Beyoncé',
         genre: 'R&B',
         numFollowers: 5600,
@@ -58,7 +58,7 @@ export var artistsData: Artist[] = [
         available: false,
     },
     {
-        id: 3,
+        id: 8,
         name: 'Taylor Swift',
         genre: 'Pop',
         numFollowers: 12400,
@@ -66,7 +66,7 @@ export var artistsData: Artist[] = [
         available: true,
     },
     {
-        id: 4,
+        id: 9,
         name: 'Rihanna',
         genre: 'Pop',
         numFollowers: 9800,
@@ -74,7 +74,7 @@ export var artistsData: Artist[] = [
         available: true,
     },
     {
-        id: 5,
+        id: 10,
         name: 'Elton John',
         genre: 'Rock',
         numFollowers: 7600,
@@ -82,7 +82,7 @@ export var artistsData: Artist[] = [
         available: false,
     },
     {
-        id: 1,
+        id: 11,
         name: 'U2',
         genre: 'Rock',
         numFollowers: 3400,
@@ -90,7 +90,7 @@ export var artistsData: Artist[] = [
         available: true,
     },
     {
-        id: 2,
+        id: 12,
         name: 'Adele',
         genre: 'Pop',
         numFollowers: 7400,
@@ -98,7 +98,7 @@ export var artistsData: Artist[] = [
         available: false,
     },
     {
-        id: 3,
+        id: 13,
         name: 'Metallica',
         genre: 'Heavy metal',
         numFollowers: 4400,
@@ -106,7 +106,7 @@ export var artistsData: Artist[] = [
         available: true,
     },
     {
-        id: 4,
+        id: 14,
         name: 'AC/DC',
         genre: 'Heavy metal',
         numFollowers: 4800,
@@ -114,7 +114,7 @@ export var artistsData: Artist[] = [
         available: true,
     },
     {
-        id: 5,
+        id: 15,
         name: 'Bruce Springsteen',
         genre: 'Rock',
         numFollowers: 3900,
@@ -122,7 +122,7 @@ export var artistsData: Artist[] = [
         available: false,
     },
     {
-        id: 1,
+        id: 16,
         name: 'Pink Floid',
         genre: 'Rock',
         numFollowers: 1900,
@@ -130,7 +130,7 @@ export var artistsData: Artist[] = [
         available: true,
     },
     {
-        id: 2,
+        id: 17,
         name: "Guns N'Roses",
         genre: 'Heavy metal',
         numFollowers: 1700,
@@ -138,7 +138,7 @@ export var artistsData: Artist[] = [
         available: false,
     },
     {
-        id: 3,
+        id: 18,
         name: 'The Killers',
         genre: 'Rock',
         numFollowers: 900,
@@ -146,7 +146,7 @@ export var artistsData: Artist[] = [
         available: true,
     },
     {
-        id: 4,
+        id: 19,
         name: 'The Weeknd',
         genre: 'Pop',
         numFollowers: 800,
@@ -154,7 +154,7 @@ export var artistsData: Artist[] = [
         available: true,
     },
     {
-        id: 5,
+        id: 20,
         name: 'Red Hot Chili Peppers',
         genre: 'Rock',
         numFollowers: 3400,
@@ -162,7 +162,7 @@ export var artistsData: Artist[] = [
         available: false,
     },
     {
-        id: 1,
+        id: 21,
         name: 'Green Day',
         genre: 'Rock',
         numFollowers: 4100,
@@ -170,7 +170,7 @@ export var artistsData: Artist[] = [
         available: true,
     },
     {
-        id: 2,
+        id: 22,
         name: 'One Direction',
         genre: 'Pop',
         numFollowers: 8000,
@@ -178,7 +178,7 @@ export var artistsData: Artist[] = [
         available: false,
     },
     {
-        id: 3,
+        id: 23,
         name: 'Lady Gaga',
         genre: 'Pop',
         numFollowers: 9100,
@@ -186,7 +186,7 @@ export var artistsData: Artist[] = [
         available: true,
     },
     {
-        id: 4,
+        id: 24,
         name: 'Twenty One Pilots',
         genre: 'Rock',
         numFollowers: 2200,
@@ -194,7 +194,7 @@ export var artistsData: Artist[] = [
         available: true,
     },
     {
-        id: 5,
+        id: 25,
         name: 'The Black Eyed Peas',
         genre: 'Hip hop',
         numFollowers: 2900,
@@ -202,7 +202,7 @@ export var artistsData: Artist[] = [
         available: false,
     },
     {
-        id: 1,
+        id: 26,
         name: 'Ariana Grande',
         genre: 'Pop',
         numFollowers: 10100,
@@ -210,7 +210,7 @@ export var artistsData: Artist[] = [
         available: true,
     },
     {
-        id: 2,
+        id: 27,
         name: 'Dua Lipa',
         genre: 'Pop',
         numFollowers: 7800,
@@ -218,7 +218,7 @@ export var artistsData: Artist[] = [
         available: false,
     },
     {
-        id: 3,
+        id: 28,
         name: 'Harry Styles',
         genre: 'Pop',
         numFollowers: 7800,
@@ -226,7 +226,7 @@ export var artistsData: Artist[] = [
         available: true,
     },
     {
-        id: 4,
+        id: 29,
         name: 'Billie Elish',
         genre: 'Pop',
         numFollowers: 6500,
@@ -234,13 +234,13 @@ export var artistsData: Artist[] = [
         available: true,
     },
     {
-        id: 5,
+        id: 30,
         name: 'Shawn Mendes',
         genre: 'Pop',
         numFollowers: 5500,
         cache: 6000,
         available: false,
-    },
+    }
 ]
 
 

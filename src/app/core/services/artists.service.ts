@@ -9,6 +9,7 @@ import { artistsData } from '../data/artist-data';
 export class ArtistsService {
     private _artists: BehaviorSubject<Artist[]> = new BehaviorSubject<Artist[]>([]);
     public artists$: Observable<Artist[]> = this._artists.asObservable();
+    private id: number = 30; // Maximum Id from artists data list
 
     constructor() { }
 
@@ -28,9 +29,9 @@ export class ArtistsService {
     }
 
     /**
-* Return an observable with a list of the availables artists.
-* @returns Observable<Artist[]>
-*/
+    * Return an observable with a list of the availables artists.
+    * @returns Observable<Artist[]>
+    */
     public getAvailables(): Observable<Artist[]> {
         return new Observable(observer => {
             setTimeout(() => {
@@ -42,6 +43,23 @@ export class ArtistsService {
         })
     }
 
+    /**
+    * Create a new artist
+    * @param artist Artist with the data to create
+    * @returns Observable<Artist>
+    */
+    public addArtist(artist: Artist): Observable<Artist> {
+        return new Observable(observer => {
+            setTimeout(() => {
+                artist.id = ++this.id;
+                var _artists = [...this._artists.value];
+                _artists.push(artist);
+                this._artists.next(_artists);
+                observer.next(artist);
+                observer.complete();
+            }, 1000);
+        });
+    }
 }
 
 

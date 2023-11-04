@@ -2,7 +2,8 @@
     <ion-toolbar>
         <ion-title>Artistas</ion-title>
         <ion-buttons slot="end">
-            <ion-toggle labelPlacement="end" (ionChange)="availableChanged()" [(ngModel)]="toggleState">Disponible</ion-toggle>
+            <ion-toggle labelPlacement="end" (ionChange)="availableChanged()"
+                [(ngModel)]="toggleState">Disponible</ion-toggle>
             <ion-button (click)="home()">Inicio</ion-button>
         </ion-buttons>
     </ion-toolbar>
@@ -12,5 +13,11 @@
         <app-artist-info *ngFor="let artist of artistsService.artists$|async" [artist]="artist"></app-artist-info>
     </ion-row>
 </ion-content>
+
+<ion-fab slot="fixed" horizontal="end" vertical="bottom">
+    <ion-fab-button (click)="onAddArtistClick($event)">
+        <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+</ion-fab>
 
 <ion-loading [isOpen]="loading" spinner="bubbles" message="Cargando..."></ion-loading>
