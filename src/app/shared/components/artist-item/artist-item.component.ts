@@ -25,4 +25,9 @@ export class ArtistItemComponent implements OnInit {
 
     ngOnInit() { }
 
+
+
+    onArtistClicked() {
+        this.clicked.emit(this._artist);
+    }
 }
