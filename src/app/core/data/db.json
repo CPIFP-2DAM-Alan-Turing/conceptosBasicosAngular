@@ -990,7 +990,7 @@
       "genre": "Rock",
       "numFollowers": 5200,
       "cache": 3000,
-      "available": true
+      "available": false
     },
     {
       "id": 3,
@@ -998,7 +998,7 @@
       "genre": "Pop",
       "numFollowers": 3600,
       "cache": 10000,
-      "available": true
+      "available": false
     },
     {
       "id": 4,
@@ -1006,7 +1006,7 @@
       "genre": "Rock alternativo",
       "numFollowers": 4600,
       "cache": 4000,
-      "available": true
+      "available": false
     },
     {
       "id": 5,
@@ -1014,7 +1014,7 @@
       "genre": "Pop",
       "numFollowers": 5400,
       "cache": 6000,
-      "available": true
+      "available": false
     },
     {
       "id": 6,
@@ -1030,7 +1030,7 @@
       "genre": "R&B",
       "numFollowers": 5600,
       "cache": 3000,
-      "available": true
+      "available": false
     },
     {
       "id": 8,
@@ -1046,7 +1046,7 @@
       "genre": "Pop",
       "numFollowers": 9800,
       "cache": 8000,
-      "available": true
+      "available": false
     },
     {
       "id": 10,
@@ -1054,7 +1054,7 @@
       "genre": "Rock",
       "numFollowers": 7600,
       "cache": 6000,
-      "available": true
+      "available": false
     },
     {
       "id": 11,
@@ -1062,7 +1062,7 @@
       "genre": "Rock",
       "numFollowers": 3400,
       "cache": 5000,
-      "available": true
+      "available": false
     },
     {
       "id": 12,
@@ -1070,7 +1070,7 @@
       "genre": "Pop",
       "numFollowers": 7400,
       "cache": 6000,
-      "available": true
+      "available": false
     },
     {
       "id": 13,
@@ -1086,7 +1086,7 @@
       "genre": "Heavy metal",
       "numFollowers": 4800,
       "cache": 5000,
-      "available": true
+      "available": false
     },
     {
       "id": 15,
@@ -1102,7 +1102,7 @@
       "genre": "Rock",
       "numFollowers": 1900,
       "cache": 3000,
-      "available": true
+      "available": false
     },
     {
       "id": 17,
@@ -1110,7 +1110,7 @@
       "genre": "Heavy metal",
       "numFollowers": 1700,
       "cache": 3000,
-      "available": true
+      "available": false
     },
     {
       "id": 18,
@@ -1118,7 +1118,7 @@
       "genre": "Rock",
       "numFollowers": 900,
       "cache": 2000,
-      "available": true
+      "available": false
     },
     {
       "id": 19,
@@ -1126,7 +1126,7 @@
       "genre": "Pop",
       "numFollowers": 800,
       "cache": 1500,
-      "available": true
+      "available": false
     },
     {
       "id": 20,
@@ -1142,7 +1142,7 @@
       "genre": "Rock",
       "numFollowers": 4100,
       "cache": 3000,
-      "available": true
+      "available": false
     },
     {
       "id": 22,
@@ -1150,7 +1150,7 @@
       "genre": "Pop",
       "numFollowers": 8000,
       "cache": 6000,
-      "available": true
+      "available": false
     },
     {
       "id": 23,
@@ -1158,7 +1158,7 @@
       "genre": "Pop",
       "numFollowers": 9100,
       "cache": 9000,
-      "available": true
+      "available": false
     },
     {
       "id": 24,
@@ -1174,7 +1174,7 @@
       "genre": "Hip hop",
       "numFollowers": 2900,
       "cache": 3000,
-      "available": true
+      "available": false
     },
     {
       "id": 26,
@@ -1190,7 +1190,7 @@
       "genre": "Pop",
       "numFollowers": 7800,
       "cache": 7000,
-      "available": true
+      "available": false
     },
     {
       "id": 28,
@@ -1198,7 +1198,7 @@
       "genre": "Pop",
       "numFollowers": 7800,
       "cache": 10000,
-      "available": true
+      "available": false
     },
     {
       "id": 29,
@@ -1214,7 +1214,7 @@
       "genre": "Pop",
       "numFollowers": 5500,
       "cache": 6000,
-      "available": true
+      "available": false
     }
   ]
 }

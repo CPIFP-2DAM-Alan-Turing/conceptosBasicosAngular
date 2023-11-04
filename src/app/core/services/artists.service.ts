@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, map, tap } from 'rxjs';
 import { Artist } from '../models/artist.model';
 import { artistsData } from '../data/artist-data';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 export class ArtistNotFoundException extends Error {
 }
@@ -14,21 +16,18 @@ export class ArtistsService {
     public artists$: Observable<Artist[]> = this._artists.asObservable();
     private id: number = 30; // Maximum Id from artists data list
 
-    constructor() { }
+    constructor(
+        private http: HttpClient
+    ) { }
 
     /**
     * Return an observable with a list of all the artists.
     * @returns Observable<Artist[]>
     */
     public getAll(): Observable<Artist[]> {
-        return new Observable(observer => {
-            setTimeout(() => {
-                var artists: Artist[] = artistsData;
-                this._artists.next(artists);
-                observer.next(artists);
-                observer.complete();
-            }, 1000);
-        })
+        return this.http.get<Artist[]>(`${environment.BASE_URL}/artists`).pipe(tap(res => {
+            this._artists.next(res);
+        }));
     }
 
     /**
@@ -36,14 +35,10 @@ export class ArtistsService {
     * @returns Observable<Artist[]>
     */
     public getAvailables(): Observable<Artist[]> {
-        return new Observable(observer => {
-            setTimeout(() => {
-                var artists: Artist[] = artistsData.filter(artist => artist.available == true);
-                this._artists.next(artists);
-                observer.next(artists);
-                observer.complete();
-            }, 1000);
+        return this.http.get<Artist[]>(`${environment.BASE_URL}/artists?available=true`).pipe(tap(res => {
+            this._artists.next(res);
         })
+        );
     }
 
     /**
