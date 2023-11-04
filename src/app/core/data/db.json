@@ -26,26 +26,21 @@
   "concerts": [
     {
       "id": 1,
-      "fav": true,
+      "name": "Dynamic chart 2022",
       "description": "Dynamic chart 2022 at Hollywood Bowl",
+      "locationType": "Place",
       "ticketSaleDate": "2022-12-15T10:00:00",
       "concertDate": "2022-12-31T10:00:00",
-      "image": "https://images.sk-static.com/images/media/profile_images/events/39741392/huge_avatar",
-      "locationType": "Place",
-      "addressType": "PostalAddress",
       "addressCountry": "US",
       "addressLocality": "Hollywood",
       "addressRegion": "CA",
       "postalCode": "90068",
       "streetAddress": "2301 N. Highland Ave.",
-      "latitude": 34.11137,
-      "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Dynamic chart 2022"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 2,
-      "name": "IShowSpeed",
+      "name": "IShowSpeed22",
       "description": "IShowSpeed at Hollywood Bowl",
       "locationType": "Place",
       "concertDate": "2022-12-25T17:30:00",
@@ -59,22 +54,17 @@
     },
     {
       "id": 3,
-      "fav": false,
+      "name": "The Smashing Pumpkins",
       "description": "The Smashing Pumpkins, Jane's Addiction, and Poppy at Hollywood Bowl at 2022-11-19T18:30:00",
-      "ticketSaleDate": "2022-11-15T00:00:00",
-      "concertDate": "2022-11-19T17:30:00",
-      "image": "https://images.sk-static.com/images/media/profile_images/artists/233074/huge_avatar",
       "locationType": "Place",
-      "addressType": "PostalAddress",
+      "concertDate": "2022-11-19T17:30:00",
+      "ticketSaleDate": "2022-11-15T00:00:00",
       "addressCountry": "US",
       "addressLocality": "Hollywood",
       "addressRegion": "CA",
       "postalCode": "90068",
       "streetAddress": "2301 N. Highland Ave.",
-      "latitude": 34.11137,
-      "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "The Smashing Pumpkins"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 4,
@@ -977,7 +967,7 @@
       "genre": "K-pop",
       "numFollowers": 6700,
       "cache": 5000,
-      "available": false
+      "available": true
     },
     {
       "id": 2,
@@ -985,7 +975,7 @@
       "genre": "Rock",
       "numFollowers": 5200,
       "cache": 3000,
-      "available": false
+      "available": true
     },
     {
       "id": 3,

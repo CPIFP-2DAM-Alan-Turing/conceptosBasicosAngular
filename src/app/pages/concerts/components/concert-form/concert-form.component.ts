@@ -19,6 +19,7 @@ export class ConcertFormComponent implements OnInit {
             this.form.controls['description'].setValue(_concert.description);
             this.form.controls['concertDate'].setValue(_concert.concertDate);
             this.form.controls['ticketSaleDate'].setValue(_concert.ticketSaleDate);
+            this.form.controls['artistId'].setValue(_concert.artistId);
             this.form.controls['locationType'].setValue(_concert.locationType);
             this.form.controls['locationAddressType'].setValue(_concert.addressType);
             this.form.controls['addressCountry'].setValue(_concert.addressCountry);
@@ -41,8 +42,9 @@ export class ConcertFormComponent implements OnInit {
             description: [''],
             locationType: ['', Validators.required],
             locationAddressType: ['', Validators.required],
-            concertDate: ['', Validators.required],
             ticketSaleDate: ['', Validators.required],
+            concertDate: ['', Validators.required],
+            artistId:[null],
             addressCountry: ['', Validators.required],
             addressLocality: ['', Validators.required],
             addressRegion: ['', Validators.required],

@@ -47,11 +47,11 @@ export class ArtistSelectableComponent implements OnInit, ControlValueAccessor {
     }
 
     /**
-    * Loads the list of artists from the server.
+    * Loads the list of available artists from the server.
     * @returns A promise that resolves with the list of artists.
     */
-    async onLoadartists() {
-        this.artists = await lastValueFrom(this.artistsService.getAll());
+    async onLoadArtists() {
+        this.artists = await lastValueFrom(this.artistsService.getAvailables());
     }
 
     /**
@@ -78,8 +78,8 @@ export class ArtistSelectableComponent implements OnInit, ControlValueAccessor {
     }
 
     /**
-     * Not implemented.
-     * @param isDisabled 
+     * Change the value of disabled.
+     * @param isDisabled New value.
      */
     setDisabledState?(isDisabled: boolean): void {
         this.disabled = isDisabled;

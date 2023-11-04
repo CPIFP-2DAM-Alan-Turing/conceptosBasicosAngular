@@ -2,12 +2,12 @@
     <ion-item [button]="!disabled" [detail]="!disabled">
         <ion-text slot="start" position="fixed">Artista:</ion-text>
         <ion-text *ngIf="!artistSelected && !disabled">Seleccione un artista</ion-text>
-        <ion-text *ngIf="!artistSelected && disabled">Ninguno</ion-text>
-        <ion-text *ngIf="artistSelected">{{artistSelected.name}} {{artistSelected.genre}}</ion-text>
+        <ion-text *ngIf="!artistSelected && disabled">Ningún artista</ion-text>
+        <ion-text *ngIf="artistSelected">{{artistSelected.name}}</ion-text>
     </ion-item>
 </div>
 
-<ion-popover *ngIf="!disabled" trigger="popover-button" #popover (willPresent)="onLoadartists()">
+<ion-popover *ngIf="!disabled" trigger="popover-button" #popover (willPresent)="onLoadArtists()">
     <ng-template>
         <ion-content>
             <ion-list>
@@ -18,11 +18,10 @@
                             slot="icon-only" name="close-outline"></ion-icon></ion-button>
                 </ion-item>
                 <ion-item button (click)="deselect(popover)">
-                    <ion-text>Ninguno</ion-text>
+                    <ion-text>Ningún artista</ion-text>
                 </ion-item>
                 <app-artist-item (clicked)="onArtistClicked(popover,$event)" *ngFor="let artist of artists"
                     [artist]="artist"></app-artist-item>
-
             </ion-list>
         </ion-content>
     </ng-template>
