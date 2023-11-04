@@ -11,6 +11,7 @@ import { Artist } from 'src/app/core/models/artist.model';
 export class ArtistFormComponent implements OnInit {
     public form: FormGroup;
     public artistName?: string;
+
     @Input() set artist(_artist: Artist | null) {
         if (_artist) {
             this.form.controls['id'].setValue(_artist.id);
