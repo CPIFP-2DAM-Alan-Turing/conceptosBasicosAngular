@@ -61,7 +61,29 @@ export class ArtistFormComponent implements OnInit {
      * Submit the form with the artist data.
      */
     onSubmit() {
-        this.formModal.dismiss(this.form.value, "submit");
+        let _role: string = this.form.value.concertId && !this.form.value.assignmentId ? "create" :
+            (!this.form.value.concertId && this.form.value.assignmentId ? "delete" :
+                (this.form.value.concertId && this.form.value.assignmentId ? "update" : ""))
+        let _data = {
+            "artist": {
+                id: this.form.value.id,
+                name: this.form.value.name,
+                genre: this.form.value.genre,
+                numFollowers: this.form.value.numFollowers,
+                cache: this.form.value.cache,
+                available: this.form.value.available
+            },
+            "assignment": this.form.value.assignmentId ? {
+                id: this.form.value.assignmentId,
+                concert_id: this.form.value.concertId,
+                artist_id: this.form.value.id
+            } : {
+                concert_id: this.form.value.concertId,
+                artist_id: this.form.value.id
+            },
+            role: _role
+        }
+        this.formModal.dismiss(_data, "submit");
     }
 
     /**

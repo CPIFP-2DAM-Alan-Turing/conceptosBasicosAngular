@@ -109,29 +109,44 @@ export class ArtistsPage implements OnInit, ArtistsInterface {
      * @param data Data to update.
      */
     onUpdate(data: any) {
-        let assignment: Assignment = {
-            id: data.assignmentId,
-            concert_id: data.concertId,
-            artist_id: data.id
+        this.createOrUpdate(data);
+    }
+
+    private createOrUpdate(data: any) {
+        let assigmentObs;
+        switch (data.role) {
+            case "create":
+                assigmentObs = this.assignmentsService.addAssignment(data.assignment);
+                break;
+            case "update":
+                assigmentObs = this.assignmentsService.updateAssignment(data.assignment);
+                break;
+            case "delete":
+                assigmentObs = this.assignmentsService.deleteAssignment(data.assignment.id);
+                break;
+            default:
         }
-        let artist: Artist = {
-            id: data.id,
-            name: data.name,
-            genre: data.genre,
-            numFollowers: data.numFollowers,
-            cache: data.cache,
-            available: data.available
+        if (assigmentObs) {
+            zip(this.artistsService.updateArtist(data.artist, this.toggleState), assigmentObs)
+                .subscribe({
+                    next: res => {
+                        console.log(res);
+                    },
+                    error: err => {
+                        console.error(err);
+                    }
+                });
+        } else {
+            this.artistsService.updateArtist(data.artist, this.toggleState)
+                .subscribe({
+                    next: res => {
+                        console.log(res);
+                    },
+                    error: err => {
+                        console.error(err);
+                    }
+                });
         }
-        zip(this.artistsService.updateArtist(artist, this.toggleState),
-            this.assignmentsService.updateAssignment(assignment))
-            .subscribe({
-                next: res => {
-                    console.log(res);
-                },
-                error: err => {
-                    console.error(err);
-                }
-            });
     }
 
     /**
