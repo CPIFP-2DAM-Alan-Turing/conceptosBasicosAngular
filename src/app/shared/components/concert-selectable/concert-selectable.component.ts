@@ -32,7 +32,6 @@ export class ConcertSelectableComponent implements OnInit, ControlValueAccessor 
     }
   }
 
-
   propagateChange = (obj: any) => { }
 
   constructor(
@@ -65,9 +64,9 @@ export class ConcertSelectableComponent implements OnInit, ControlValueAccessor 
     } else {
       this.concertSelected = undefined;
     }
-    if (propagate && this.concertSelected) {
-      this.propagateChange(this.concertSelected.id);
-    }
+    if (propagate) {
+      this.propagateChange(this.concertSelected?.id);
+    } 
   }
 
   onConcertClicked(popover: IonPopover, concert: Concert) {
