@@ -29,8 +29,8 @@
                     fill="outline" formControlName="ticketSaleDate"></ion-input>
             </ion-col>
         </ion-row>
-        <app-artist-selectable formControlName="artistId">
-        </app-artist-selectable>
+        <input type="number" hidden formControlName="assignmentId"/>
+        <app-artist-selectable formControlName="artistId" [concert]="concert"/>
         <ion-accordion-group>
             <ion-accordion value="first">
                 <ion-item slot="header">
@@ -50,7 +50,7 @@
                     placeholder="Ej. CA" formControlName="addressRegion"></ion-input>
                 <ion-input type="text" slot="content" label="CP" labelPlacement="floating" fill="outline"
                     placeholder="Ej. 90068" formControlName="postalCode"></ion-input>
-            </ion-accordion>
+                </ion-accordion>
         </ion-accordion-group>
     </form>
 
