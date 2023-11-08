@@ -1,8 +1,9 @@
-import { Component, OnInit, forwardRef } from '@angular/core';
+import { Component, Input, OnInit, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { IonInput, IonPopover } from '@ionic/angular';
 import { lastValueFrom } from 'rxjs';
 import { Artist } from 'src/app/core/models/artist.model';
+import { Concert } from 'src/app/core/models/concert.model';
 import { ArtistsService } from 'src/app/core/services/artists.service';
 
 export const USER_SELECTABLE_VALUE_ACCESSOR: any = {
@@ -21,7 +22,14 @@ export class ArtistSelectableComponent implements OnInit, ControlValueAccessor {
     artistSelected: Artist | undefined;
     disabled: boolean = true;
     artists: Artist[] = [];
+    private _concert: Concert | null = null;
 
+    @Input() set concert(_concert: Concert | null) {
+        this._concert = _concert;
+        if (this._concert) {
+        }
+    }
+    
     constructor(
         public artistsService: ArtistsService
     ) { }
