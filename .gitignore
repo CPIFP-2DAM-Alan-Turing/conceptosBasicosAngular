@@ -67,6 +67,3 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
-
-# db.json
-src/app/core/data/db.json
