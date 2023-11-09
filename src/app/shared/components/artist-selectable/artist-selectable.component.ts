@@ -81,9 +81,7 @@ export class ArtistSelectableComponent implements OnInit, ControlValueAccessor {
      * Not implemented.
      * @param fn
      */
-    registerOnTouched(fn: any): void {
-        throw new Error('Method not implemented.');
-    }
+    registerOnTouched(fn: any): void {}
 
     /**
      * Change the value of disabled.
@@ -118,7 +116,7 @@ export class ArtistSelectableComponent implements OnInit, ControlValueAccessor {
     * @param artist The artist that was clicked.
     */
     onArtistClicked(popover: IonPopover, artist: any) {
-        this.selectArtist(artist.id);
+        this.selectArtist(artist.id, true);
         popover.dismiss();
     }
 
@@ -135,7 +133,7 @@ export class ArtistSelectableComponent implements OnInit, ControlValueAccessor {
         else
             this.artistSelected = undefined;
         if (propagate)
-            this.propagateChange(this.artistSelected);
+            this.propagateChange(this.artistSelected?.id);
     }
 
     /**

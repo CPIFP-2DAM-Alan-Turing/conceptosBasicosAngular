@@ -74,7 +74,7 @@ export class ConcertFormComponent implements OnInit {
     }
 
     public onSubmit() {
-        console.log("artist_id:",this.form.value.artist_id);
+        console.log("artistId:",this.form.value.artistId);
         console.log("assignmentId:",this.form.value.assignmentId);
         let _role: string = this.form.value.artistId && !this.form.value.assignmentId ? "create" :
             (!this.form.value.artistId && this.form.value.assignmentId ? "delete" :
