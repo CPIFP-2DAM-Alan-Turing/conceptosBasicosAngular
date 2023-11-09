@@ -4,6 +4,7 @@ export interface Concert {
     description: string,
     ticketSaleDate: string,
     concertDate: string,
+    artistId: number,
     image: string,
     locationType: string,
     addressType: string,
