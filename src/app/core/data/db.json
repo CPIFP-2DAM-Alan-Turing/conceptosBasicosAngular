@@ -27,6 +27,7 @@
     {
       "id": 1,
       "fav": true,
+      "name": "Dynamic chart 2022",
       "description": "Dynamic chart 2022 at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/events/39741392/huge_avatar",
       "locationType": "Place",
@@ -38,12 +39,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Dynamic chart 2022"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 2,
       "fav": false,
+      "name": "IShowSpeed",
       "description": "IShowSpeed at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/10185162/huge_avatar",
       "locationType": "Place",
@@ -55,12 +56,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "IShowSpeed"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 3,
       "fav": false,
+      "name": "The Smashing Pumpkins",
       "description": "The Smashing Pumpkins, Jane's Addiction, and Poppy at Hollywood Bowl at 2022-11-19T18:30:00",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/233074/huge_avatar",
       "locationType": "Place",
@@ -72,12 +73,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "The Smashing Pumpkins"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 4,
       "fav": true,
+      "name": "Adassa",
       "description": "Adassa at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/10208013/huge_avatar",
       "locationType": "Place",
@@ -89,12 +90,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Adassa"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 5,
       "fav": false,
+      "name": "Adassa",
       "description": "Adassa at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/10208013/huge_avatar",
       "locationType": "Place",
@@ -106,12 +107,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Adassa"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 6,
       "fav": false,
+      "name": "Zac Brown Band",
       "description": "Zac Brown Band, Robert Randolph, and Caroline Jones at Hollywood Bowl at ",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/514278/huge_avatar",
       "locationType": "Place",
@@ -123,12 +124,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Zac Brown Band"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 7,
       "fav": false,
+      "name": "The Who",
       "description": "The Who at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/69685/huge_avatar",
       "locationType": "Place",
@@ -140,12 +141,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "The Who"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 8,
       "fav": true,
+      "name": "Danny Elfman",
       "description": "Danny Elfman and Boy Harsher at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/53466/huge_avatar",
       "locationType": "Place",
@@ -157,12 +158,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Danny Elfman"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 9,
       "fav": false,
+      "name": "Danny Elfman",
       "description": "Danny Elfman and Boy Harsher at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/53466/huge_avatar",
       "locationType": "Place",
@@ -174,12 +175,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Danny Elfman"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 10,
       "fav": false,
+      "name": "AUDACY'S 9th Annual WE CAN SURVIVE 2022",
       "description": "AUDACY'S 9th Annual WE CAN SURVIVE 2022 at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/events/40634931/huge_avatar",
       "locationType": "Place",
@@ -191,12 +192,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "AUDACY'S 9th Annual WE CAN SURVIVE 2022"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 11,
       "fav": true,
+      "name": "Florence + The Machine",
       "description": "Florence + The Machine at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/10129727/huge_avatar",
       "locationType": "Place",
@@ -208,12 +209,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Florence + The Machine"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 12,
       "fav": true,
+      "name": "Florence + The Machine",
       "description": "Florence + The Machine at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/10129727/huge_avatar",
       "locationType": "Place",
@@ -225,12 +226,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Florence + The Machine"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 13,
       "fav": false,
+      "name": "Maren Morris",
       "description": "Maren Morris at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/2055882/huge_avatar",
       "locationType": "Place",
@@ -242,12 +243,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Maren Morris"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 14,
       "fav": false,
+      "name": "RÜFÜS DU SOL",
       "description": "RÜFÜS DU SOL at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/7759619/huge_avatar",
       "locationType": "Place",
@@ -259,12 +260,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "RÜFÜS DU SOL"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 15,
       "fav": false,
+      "name": "New Order",
       "description": "New Order and Pet Shop Boys at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/434538/huge_avatar",
       "locationType": "Place",
@@ -276,12 +277,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "New Order"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 16,
       "fav": false,
+      "name": "New Order",
       "description": "New Order and Pet Shop Boys at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/434538/huge_avatar",
       "locationType": "Place",
@@ -293,12 +294,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "New Order"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 17,
       "fav": false,
+      "name": "Yeah Yeah Yeahs",
       "description": "Yeah Yeah Yeahs at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/59934/huge_avatar",
       "locationType": "Place",
@@ -310,12 +311,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Yeah Yeah Yeahs"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 18,
       "fav": false,
+      "name": "Wu-Tang Clan",
       "description": "Wu-Tang Clan, Nas, and Busta Rhymes at Hollywood Bowl at 2022-10-04T20:00:00",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/283704/huge_avatar",
       "locationType": "Place",
@@ -327,12 +328,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Wu-Tang Clan"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 19,
       "fav": true,
+      "name": "Stevie Nicks",
       "description": "Stevie Nicks and Vanessa Carlton at Hollywood Bowl at 2022-10-03T20:00:00",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/528768/huge_avatar",
       "locationType": "Place",
@@ -344,12 +345,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Stevie Nicks"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 20,
       "fav": false,
+      "name": "Jack Johnson",
       "description": "Jack Johnson at Hollywood Bowl at 2022-10-02T18:00:00",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/111365/huge_avatar",
       "locationType": "Place",
@@ -361,12 +362,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Jack Johnson"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 21,
       "fav": false,
+      "name": "Jack Johnson",
       "description": "Jack Johnson at Hollywood Bowl at 2022-10-01T18:30:00",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/111365/huge_avatar",
       "locationType": "Place",
@@ -378,12 +379,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Jack Johnson"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 22,
       "fav": false,
+      "name": "Jamie xx",
       "description": "Jamie xx at Hollywood Bowl at 2022-09-30T17:30:00",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/2785766/huge_avatar",
       "locationType": "Place",
@@ -395,12 +396,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Jamie xx"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 23,
       "fav": false,
+      "name": "Pentatonix",
       "description": "Pentatonix at Hollywood Bowl at 2022-09-29T20:00:00",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/5612033/huge_avatar",
       "locationType": "Place",
@@ -412,12 +413,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Pentatonix"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 24,
       "fav": true,
+      "name": "Herbie Hancock",
       "description": "Herbie Hancock at Hollywood Bowl at 2022-09-28T20:00:00",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/224916/huge_avatar",
       "locationType": "Place",
@@ -429,12 +430,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Herbie Hancock"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 25,
       "fav": false,
+      "name": "Pitbull",
       "description": "Pitbull, Sean Paul, and Iggy Azalea at Hollywood Bowl at 2022-09-27T20:00:00",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/440797/huge_avatar",
       "locationType": "Place",
@@ -446,12 +447,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Pitbull"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 26,
       "fav": false,
+      "name": "Grace Jones",
       "description": "Grace Jones and CHVRCHES at Hollywood Bowl at 2022-09-25",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/370226/huge_avatar",
       "locationType": "Place",
@@ -463,12 +464,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Grace Jones"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 27,
       "fav": false,
+      "name": "The Concert: A Tribute to ABBA",
       "description": "The Concert: A Tribute to ABBA at Hollywood Bowl at 2022-09-24T20:00:00",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/10244501/huge_avatar",
       "locationType": "Place",
@@ -480,12 +481,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "The Concert: A Tribute to ABBA"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 28,
       "fav": false,
+      "name": "The Concert: A Tribute to ABBA",
       "description": "The Concert: A Tribute to ABBA at Hollywood Bowl at 2022-09-23T20:00:00",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/10244501/huge_avatar",
       "locationType": "Place",
@@ -497,12 +498,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "The Concert: A Tribute to ABBA"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 29,
       "fav": false,
+      "name": "Cimafunk",
       "description": "Cimafunk at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/9554454/huge_avatar",
       "locationType": "Place",
@@ -514,12 +515,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Cimafunk"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 30,
       "fav": true,
+      "name": "Dave Matthews Band",
       "description": "Dave Matthews Band at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/334506/huge_avatar",
       "locationType": "Place",
@@ -531,12 +532,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Dave Matthews Band"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 31,
       "fav": false,
+      "name": "Dave Matthews Band",
       "description": "Dave Matthews Band at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/334506/huge_avatar",
       "locationType": "Place",
@@ -548,12 +549,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Dave Matthews Band"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 32,
       "fav": false,
+      "name": "UB40",
       "description": "UB40 at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/347235/huge_avatar",
       "locationType": "Place",
@@ -565,12 +566,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "UB40"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 33,
       "fav": false,
+      "name": "Los Angeles Philharmonic",
       "description": "Los Angeles Philharmonic at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/461937/huge_avatar",
       "locationType": "Place",
@@ -582,12 +583,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Los Angeles Philharmonic"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 34,
       "fav": true,
+      "name": "Lang Lang",
       "description": "Lang Lang at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/188643/huge_avatar",
       "locationType": "Place",
@@ -599,12 +600,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Lang Lang"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 35,
       "fav": false,
+      "name": "Pink Martini",
       "description": "Pink Martini at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/553725/huge_avatar",
       "locationType": "Place",
@@ -616,12 +617,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Pink Martini"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 36,
       "fav": false,
+      "name": "Los Angeles Philharmonic",
       "description": "Los Angeles Philharmonic at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/461937/huge_avatar",
       "locationType": "Place",
@@ -633,12 +634,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Los Angeles Philharmonic"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 37,
       "fav": false,
+      "name": "Ben Platt",
       "description": "Ben Platt at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/9258579/huge_avatar",
       "locationType": "Place",
@@ -650,12 +651,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Ben Platt"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 38,
       "fav": true,
+      "name": "Duran Duran",
       "description": "Duran Duran at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/427500/huge_avatar",
       "locationType": "Place",
@@ -667,12 +668,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Duran Duran"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 39,
       "fav": false,
+      "name": "Duran Duran",
       "description": "Duran Duran at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/427500/huge_avatar",
       "locationType": "Place",
@@ -684,12 +685,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Duran Duran"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 40,
       "fav": false,
+      "name": "Duran Duran",
       "description": "Duran Duran at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/427500/huge_avatar",
       "locationType": "Place",
@@ -701,12 +702,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Duran Duran"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 41,
       "fav": false,
+      "name": "Los Angeles Philharmonic",
       "description": "Los Angeles Philharmonic at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/461937/huge_avatar",
       "locationType": "Place",
@@ -718,12 +719,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Los Angeles Philharmonic"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 42,
       "fav": true,
+      "name": "Jazz at Lincoln Center Orchestra",
       "description": "Jazz at Lincoln Center Orchestra at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/578639/huge_avatar",
       "locationType": "Place",
@@ -735,12 +736,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Jazz at Lincoln Center Orchestra"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 43,
       "fav": false,
+      "name": "Los Angeles Philharmonic",
       "description": "Los Angeles Philharmonic at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/461937/huge_avatar",
       "locationType": "Place",
@@ -752,12 +753,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Los Angeles Philharmonic"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 44,
       "fav": false,
+      "name": "Los Angeles Philharmonic",
       "description": "Los Angeles Philharmonic at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/461937/huge_avatar",
       "locationType": "Place",
@@ -769,12 +770,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Los Angeles Philharmonic"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 45,
       "fav": false,
+      "name": "Los Angeles Philharmonic",
       "description": "Los Angeles Philharmonic at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/461937/huge_avatar",
       "locationType": "Place",
@@ -786,12 +787,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Los Angeles Philharmonic"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 46,
       "fav": false,
+      "name": "Los Angeles Philharmonic",
       "description": "Los Angeles Philharmonic at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/461937/huge_avatar",
       "locationType": "Place",
@@ -803,12 +804,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Los Angeles Philharmonic"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 47,
       "fav": false,
+      "name": "Los Angeles Philharmonic",
       "description": "Los Angeles Philharmonic at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/461937/huge_avatar",
       "locationType": "Place",
@@ -820,12 +821,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Los Angeles Philharmonic"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 48,
       "fav": false,
+      "name": "Kidz Bop Kids",
       "description": "Kidz Bop Kids at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/112342/huge_avatar",
       "locationType": "Place",
@@ -837,12 +838,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Kidz Bop Kids"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 49,
       "fav": false,
+      "name": "Los Angeles Philharmonic",
       "description": "Los Angeles Philharmonic at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/461937/huge_avatar",
       "locationType": "Place",
@@ -854,12 +855,12 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Los Angeles Philharmonic"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 50,
       "fav": false,
+      "name": "George Benson",
       "description": "George Benson, Boney James, and Lalah Hathaway at Hollywood Bowl",
       "image": "https://images.sk-static.com/images/media/profile_images/artists/48535/huge_avatar",
       "locationType": "Place",
@@ -871,8 +872,7 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "George Benson"
+      "locationName": "Hollywood Bowl"
     }
   ],
   "artists": [
