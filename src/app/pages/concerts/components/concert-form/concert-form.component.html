@@ -16,7 +16,7 @@
 <ion-content class="ion-padding">
   <form [formGroup]="form">
     <!-- TODO add fav in form -->
-    <!-- TODO add image in form -->
+    <app-image-selectable formControlName="image" />
     <ion-input
       type="text"
       label="Nombre del evento"

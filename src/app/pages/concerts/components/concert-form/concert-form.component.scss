@@ -1,3 +1,7 @@
 ion-input, ion-textarea {
     margin: 1rem 0;
 }
+
+:host {
+    flex-wrap: wrap !important;
+}

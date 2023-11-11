@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { ButtonEffectDirective } from './directives/button-effect.directive';
-import { ArtistSelectableComponent } from './components/artist-selectable/artist-selectable.component';
-import { ArtistItemComponent } from './components/artist-selectable/artist-item/artist-item.component';
 import { ConcertSelectableComponent } from './components/concert-selectable/concert-selectable.component';
 import { ConcertSelectableItemComponent } from './components/concert-selectable/concert-selectable-item/concert-selectable-item.component';
+import { ImageSelectableComponent } from '../pages/concerts/components/concert-form/image-selectable/image-selectable/image-selectable.component';
+import { ArtistSelectableComponent } from './components/artist-selectable/artist-selectable.component';
+import { ArtistItemComponent } from './components/artist-selectable/artist-item/artist-item.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ConcertSelectableItemComponent } from './components/concert-selectable/
     ArtistSelectableComponent,
     ArtistItemComponent,
     ConcertSelectableComponent,
-    ConcertSelectableItemComponent
+    ConcertSelectableItemComponent,
+    ImageSelectableComponent
   ],
   imports: [
     // Modules
@@ -37,7 +39,8 @@ import { ConcertSelectableItemComponent } from './components/concert-selectable/
     ArtistSelectableComponent,
     ArtistItemComponent,
     ConcertSelectableComponent,
-    ConcertSelectableItemComponent
+    ConcertSelectableItemComponent,
+    ImageSelectableComponent
   ]
 })
 export class SharedModule { }
