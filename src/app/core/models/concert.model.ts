@@ -1,10 +1,10 @@
 export interface Concert {
     id: number,
+    name: string,
     fav: boolean,
     description: string,
     ticketSaleDate: string,
     concertDate: string,
-    artistId: number,
     image: string,
     locationType: string,
     addressType: string,
@@ -15,8 +15,7 @@ export interface Concert {
     streetAddress: string,
     latitude: number,
     longitude: number,
-    locationName: string,
-    name: string
+    locationName: string
 }
 
 
