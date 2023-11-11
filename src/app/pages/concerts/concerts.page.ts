@@ -81,7 +81,7 @@ export class ConcertsPage implements OnInit, ConcertsInterface {
  * @param data Data to update.
  */
     onUpdate(data: any) {
-        console.log("onUpdate: " + data);
+        console.log("onUpdate: " + JSON.stringify(data));
         this.createOrUpdate(data);
     }
 

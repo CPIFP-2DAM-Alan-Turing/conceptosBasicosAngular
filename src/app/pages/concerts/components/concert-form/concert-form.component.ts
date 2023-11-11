@@ -23,8 +23,6 @@ export class ConcertFormComponent {
             this.form.controls['name'].setValue(concert.name);
             this.form.controls['image'].setValue(concert.image);
             this.form.controls['description'].setValue(concert.description);
-            this.form.controls['concertDate'].setValue(concert.concertDate);
-            this.form.controls['ticketSaleDate'].setValue(concert.ticketSaleDate);
             this.form.controls['locationType'].setValue(concert.locationType);
             this.form.controls['addressType'].setValue(concert.addressType);
             this.form.controls['addressCountry'].setValue(concert.addressCountry);
@@ -49,6 +47,8 @@ export class ConcertFormComponent {
             this._assignment = assignment;
             this.form.controls['assignmentId'].setValue(assignment?.id);
             this.form.controls['artistId'].setValue(assignment?.artist_id);
+            this.form.controls['concertDate'].setValue(assignment?.concertDate);
+            this.form.controls['ticketSaleDate'].setValue(assignment?.ticketSaleDate);
         }
     }
 
@@ -68,7 +68,7 @@ export class ConcertFormComponent {
             locationType: ['', Validators.required],
             addressType: ['', Validators.required],
             locationAddressType: ['', Validators.required],
-            artistId: [],
+            artistId: [, Validators.required],
             addressCountry: ['', Validators.required],
             addressLocality: ['', Validators.required],
             addressRegion: ['', Validators.required],
@@ -78,15 +78,13 @@ export class ConcertFormComponent {
             latitude: ['', Validators.required],
             longitude: ['', Validators.required],
             fav: ['', Validators.required],
-            assignmentId: [],
+            assignmentId: [, Validators.required],
             ticketSaleDate: ['', Validators.required],
-            concertDate: ['', Validators.required],
+            concertDate: ['', Validators.required]
         });
     }
 
     public onSubmit() {
-        console.log("artistId:", this.form.value.artistId);
-        console.log("assignmentId:", this.form.value.assignmentId);
         let _role: string = this.form.value.artistId && !this.form.value.assignmentId ? "create" :
             (!this.form.value.artistId && this.form.value.assignmentId ? "delete" :
                 (this.form.value.artistId && this.form.value.assignmentId ? "update" : ""))
@@ -96,8 +94,6 @@ export class ConcertFormComponent {
                 fav: this.form.value.fav,
                 name: this.form.value.name,
                 description: this.form.value.description,
-                ticketSaleDate: this.form.value.ticketSaleDate,
-                concertDate: this.form.value.concertDate,
                 image: this.form.value.image == '' ? "assets/images/concerts/default.jpg" : this.form.value.image,
                 locationType: this.form.value.locationType,
                 addressType: this.form.value.addressType,
@@ -110,13 +106,12 @@ export class ConcertFormComponent {
                 longitude: this.form.value.longitude,
                 locationName: this.form.value.locationName,
             },
-            "assignment": this.form.value.assignmentId ? {
-                id: this.form.value.assignmentId,
+            "assignment": {
+                id: this.form.value.assignmentId ?? null,
                 concert_id: this.form.value.id,
-                artist_id: this.form.value.artistId
-            } : {
-                concert_id: this.form.value.id,
-                artist_id: this.form.value.artistId
+                artist_id: this.form.value.artistId,
+                concertDate: this.form.value.concertDate,
+                ticketSaleDate: this.form.value.ticketSaleDate
             },
             role: _role
         }
