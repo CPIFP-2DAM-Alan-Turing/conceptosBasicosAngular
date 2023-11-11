@@ -3,8 +3,6 @@ export interface Concert {
     name: string,
     fav: boolean,
     description: string,
-    ticketSaleDate: string,
-    concertDate: string,
     image: string,
     locationType: string,
     addressType: string,

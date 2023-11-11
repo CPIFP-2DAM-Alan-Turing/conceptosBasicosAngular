@@ -36,14 +36,26 @@
   <div class="ion-card-content">
     <div class="saleDate">
       <p>Venta tickets</p>
-      <p class="date">{{ concert?.ticketSaleDate| date:("dd MMM YY") }}</p>
+      <p class="date">
+        {{
+          concert
+            | assignment : [assignmentSvc.assignments$ | async, "saleDate"]
+            | date : "dd MMM YY"
+        }}
+      </p>
     </div>
     <div class="concertDate">
       <p>Concierto</p>
-      <p class="date">{{ concert?.concertDate | date:("dd MMM YY") }}</p>
+      <p class="date">
+        {{
+          concert
+            | assignment : [assignmentSvc.assignments$ | async, "concertDate"]
+            | date : "dd MMM YY"
+        }}
+      </p>
     </div>
   </div>
-  
+
   <ion-button (click)="changeFav($event)" fill="clear">
     <ion-icon
       *ngIf="concert?.fav"

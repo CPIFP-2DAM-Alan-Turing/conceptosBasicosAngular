@@ -8,6 +8,7 @@ import { ConcertSelectableItemComponent } from './components/concert-selectable/
 import { ImageSelectableComponent } from '../pages/concerts/components/concert-form/image-selectable/image-selectable/image-selectable.component';
 import { ArtistSelectableComponent } from './components/artist-selectable/artist-selectable.component';
 import { ArtistItemComponent } from './components/artist-selectable/artist-item/artist-item.component';
+import { AssignmentPipe } from './pipes/assignment.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { ArtistItemComponent } from './components/artist-selectable/artist-item/
     ArtistItemComponent,
     ConcertSelectableComponent,
     ConcertSelectableItemComponent,
-    ImageSelectableComponent
+    ImageSelectableComponent,
+    // Pipes
+    AssignmentPipe
   ],
   imports: [
     // Modules
@@ -40,7 +43,9 @@ import { ArtistItemComponent } from './components/artist-selectable/artist-item/
     ArtistItemComponent,
     ConcertSelectableComponent,
     ConcertSelectableItemComponent,
-    ImageSelectableComponent
+    ImageSelectableComponent,
+    // Pipes
+    AssignmentPipe
   ]
 })
 export class SharedModule { }

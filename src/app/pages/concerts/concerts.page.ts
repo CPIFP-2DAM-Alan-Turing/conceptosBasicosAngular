@@ -1,11 +1,12 @@
 import { AssignmentsService } from 'src/app/core/services/assignments.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Concert } from 'src/app/core/models/concert.model';
 import { ConcertFormComponent } from './components/concert-form/concert-form.component';
 import { ConcertsService } from 'src/app/core/services/concerts.service';
 import { ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { zip } from 'rxjs';
+import { Subscription, zip } from 'rxjs';
+import { Assignment } from 'src/app/core/models/assignment.model';
 
 
 interface ConcertsInterface {
@@ -20,21 +21,25 @@ interface ConcertsInterface {
     templateUrl: './concerts.page.html',
     styleUrls: ['./concerts.page.scss'],
 })
-export class ConcertsPage implements OnInit, ConcertsInterface {
-    loading = true;
+export class ConcertsPage implements OnInit, ConcertsInterface, OnDestroy {
+    public loading = true;
+    private _assignments?: Assignment[];
+    private _subs: Subscription[] = []
 
     constructor(
         private router: Router,
         public concertService: ConcertsService,
         private form: ModalController,
-        private assignmentsService: AssignmentsService
+        private assignmentSvc: AssignmentsService
     ) { }
 
     ngOnInit() {
         this.loading = true;
-        this.concertService.getAll().subscribe((c) => {
-            this.loading = false;
-        });
+        this._subs.push(zip(this.concertService.getAll(), this.assignmentSvc.getAll())
+            .subscribe(res => {
+                this._assignments = res[1];
+                this.loading = false;
+            }));
     }
 
     /**
@@ -90,13 +95,13 @@ export class ConcertsPage implements OnInit, ConcertsInterface {
         let assigmentObs;
         switch (data.role) {
             case "create":
-                assigmentObs = this.assignmentsService.addAssignment(data.assignment);
+                assigmentObs = this.assignmentSvc.addAssignment(data.assignment);
                 break;
             case "update":
-                assigmentObs = this.assignmentsService.updateAssignment(data.assignment);
+                assigmentObs = this.assignmentSvc.updateAssignment(data.assignment);
                 break;
             case "delete":
-                assigmentObs = this.assignmentsService.deleteAssignment(data.assignment.id);
+                assigmentObs = this.assignmentSvc.deleteAssignment(data.assignment.id);
                 break;
             default:
         }
@@ -134,30 +139,23 @@ export class ConcertsPage implements OnInit, ConcertsInterface {
         });
     }
 
-    presentForm(data: Concert | null, onDismiss: (data: any) => void) {
-        this.assignmentsService.getAll().subscribe(async res => {
-            let assignment = res.find(c => c.concert_id === data?.id)
-            const form = await this.form.create({
-                component: ConcertFormComponent,
-                componentProps: {
-                    concert: data,
-                    assignment: assignment
-                },
-                cssClass: "modal-60vw"
-            });
-            form.present();
-            form.onDidDismiss().then(result => {
-                onDismiss(result);
-            });
+    async presentForm(data: Concert | null, onDismiss: (data: any) => void) {
+        let assignment = this._assignments?.find(c => c.concert_id === data?.id);
+        const form = await this.form.create({
+            component: ConcertFormComponent,
+            componentProps: {
+                concert: data,
+                assignment: assignment
+            },
+            cssClass: "modal-60vw"
+        });
+        form.present();
+        form.onDidDismiss().then(result => {
+            onDismiss(result);
         });
     }
 
-
-
-
-
-
-
-
-
+    ngOnDestroy(): void {
+        this._subs.forEach(s => s.unsubscribe());
+    }
 }
