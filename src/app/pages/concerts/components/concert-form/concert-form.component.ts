@@ -18,12 +18,10 @@ export class ConcertFormComponent implements OnInit {
 
     @Input() set concert(_concert: Concert) {
         if (_concert) {
-            this._concert=_concert;
+            this._concert = _concert;
             this.form.controls['id'].setValue(_concert.id);
             this.form.controls['name'].setValue(_concert.name);
             this.form.controls['description'].setValue(_concert.description);
-            this.form.controls['concertDate'].setValue(_concert.concertDate);
-            this.form.controls['ticketSaleDate'].setValue(_concert.ticketSaleDate);
             this.form.controls['artistId'].setValue(_concert.artistId);
             this.form.controls['locationType'].setValue(_concert.locationType);
             this.form.controls['locationAddressType'].setValue(_concert.addressType);
@@ -41,6 +39,8 @@ export class ConcertFormComponent implements OnInit {
             this._assignment = _assignment;
             this.form.controls['assignmentId'].setValue(_assignment?.id);
             this.form.controls['artistId'].setValue(_assignment?.artist_id);
+            this.form.controls['concertDate'].setValue(_assignment?.concertDate);
+            this.form.controls['ticketSaleDate'].setValue(_assignment?.ticketSaleDate);
         }
     }
 
@@ -56,14 +56,14 @@ export class ConcertFormComponent implements OnInit {
             locationAddressType: ['', Validators.required],
             ticketSaleDate: ['', Validators.required],
             concertDate: ['', Validators.required],
-            artistId: [],
+            artistId: [, Validators.required],
             addressCountry: ['', Validators.required],
             addressLocality: ['', Validators.required],
             addressRegion: ['', Validators.required],
             postalCode: ['', Validators.required],
             streetAddress: ['', Validators.required],
             locationName: ['', Validators.required],
-            assignmentId: []
+            assignmentId: [, Validators.required]
         });
     }
 
@@ -74,8 +74,8 @@ export class ConcertFormComponent implements OnInit {
     }
 
     public onSubmit() {
-        console.log("artistId:",this.form.value.artistId);
-        console.log("assignmentId:",this.form.value.assignmentId);
+        console.log("artistId:", this.form.value.artistId);
+        console.log("assignmentId:", this.form.value.assignmentId);
         let _role: string = this.form.value.artistId && !this.form.value.assignmentId ? "create" :
             (!this.form.value.artistId && this.form.value.assignmentId ? "delete" :
                 (this.form.value.artistId && this.form.value.assignmentId ? "update" : ""))
@@ -84,9 +84,6 @@ export class ConcertFormComponent implements OnInit {
                 id: this.form.value.id,
                 name: this.form.value.name,
                 description: this.form.value.description,
-                ticketSaleDate: this.form.value.ticketSaleDate,
-                concertDate: this.form.value.concertDate,
-                concertId: this.form.value.concertId,
                 locationType: this.form.value.locationType,
                 addressType: this.form.value.addressType,
                 addressCountry: this.form.value.addressCountry,
@@ -97,13 +94,12 @@ export class ConcertFormComponent implements OnInit {
                 longitude: this.form.value.longitude,
                 locationName: this.form.value.locationName,
             },
-            "assignment": this.form.value.assignmentId ? {
-                id: this.form.value.assignmentId,
+            "assignment": {
+                id: this.form.value.assignmentId ?? null,
                 concert_id: this.form.value.id,
-                artist_id: this.form.value.artistId
-            } : {
-                concert_id: this.form.value.id,
-                artist_id: this.form.value.artistId
+                artist_id: this.form.value.artistId,
+                concertDate: this.form.value.concertDate,
+                ticketSaleDate: this.form.value.ticketSaleDate
             },
             role: _role
         }
