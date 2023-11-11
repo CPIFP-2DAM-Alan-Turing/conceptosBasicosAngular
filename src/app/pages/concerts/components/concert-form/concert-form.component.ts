@@ -98,7 +98,7 @@ export class ConcertFormComponent {
                 description: this.form.value.description,
                 ticketSaleDate: this.form.value.ticketSaleDate,
                 concertDate: this.form.value.concertDate,
-                image: this.form.value.image,
+                image: this.form.value.image == '' ? "assets/images/concerts/default.jpg" : this.form.value.image,
                 locationType: this.form.value.locationType,
                 addressType: this.form.value.addressType,
                 addressCountry: this.form.value.addressCountry,
