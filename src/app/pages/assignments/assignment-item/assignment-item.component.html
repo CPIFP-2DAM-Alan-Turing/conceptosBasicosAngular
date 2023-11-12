@@ -1,0 +1,24 @@
+<ion-row>
+  <ion-col>
+    {{ assignment?.concert_id | concert | async }}
+  </ion-col>
+  <ion-col>
+    {{ assignment?.artist_id | artist | async }}
+  </ion-col>
+  <ion-col>
+    {{ assignment?.concertDate | date : "longDate" }}
+  </ion-col>
+  <ion-col>
+    {{ assignment?.concertDate | date : "longDate" }}
+  </ion-col>
+  <ion-col>
+    <ion-buttons>
+      <ion-button color="primary">
+        <ion-icon slot="icon-only" name="pencil-outline"></ion-icon>
+      </ion-button>
+      <ion-button color="danger">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-col>
+</ion-row>

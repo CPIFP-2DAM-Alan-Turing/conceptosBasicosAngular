@@ -30,4 +30,12 @@ export class HomePage {
     artists() {
         this.router.navigate(['/artists']);
     }
+
+    /**
+     * Navigate to assignments page
+     */
+    assignments() {
+        this.router.navigate(['/assignments']);
+    }
+
 }

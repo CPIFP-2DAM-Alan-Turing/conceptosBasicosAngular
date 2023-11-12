@@ -35,8 +35,11 @@ export class ConcertsPage implements OnInit, ConcertsInterface, OnDestroy {
 
     ngOnInit() {
         this.loading = true;
-        this._subs.push(zip(this.concertService.getAll(), this.assignmentSvc.getAll())
-            .subscribe(res => {
+        this._subs.push(
+            zip(
+                this.concertService.getAll(),
+                this.assignmentSvc.getAll()
+            ).subscribe(res => {
                 this._assignments = res[1];
                 this.loading = false;
             }));

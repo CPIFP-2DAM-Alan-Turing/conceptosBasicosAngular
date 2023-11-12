@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import { zip } from 'rxjs';
+import { lastValueFrom, zip } from 'rxjs';
 import { Artist } from 'src/app/core/models/artist.model';
 import { Assignment } from 'src/app/core/models/assignment.model';
 import { ArtistsService } from 'src/app/core/services/artists.service';
@@ -22,7 +22,7 @@ interface ArtistsInterface {
 })
 
 export class ArtistsPage implements OnInit, ArtistsInterface {
-    loading = false;
+    public loading = false;
     toggleState: boolean = false;
 
     constructor(
@@ -32,11 +32,13 @@ export class ArtistsPage implements OnInit, ArtistsInterface {
         private assignmentsService: AssignmentsService
     ) { }
 
-    ngOnInit() {
+    async ngOnInit() {
         this.loading = true;
-        this.artistsService.getAll().subscribe(artist => {
-            this.loading = false;
-        });
+        await lastValueFrom(this.artistsService.getAll())
+            .catch((error: any) => {
+                console.error(error);
+            });
+        this.loading = false;
     }
 
     /**

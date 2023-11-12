@@ -1,0 +1,37 @@
+<ion-header [translucent]="true" sm>
+  <ion-toolbar>
+    <ion-title>Fechas de conciertos</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="home()">Inicio</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <!-- Table -->
+  <ion-grid [fixed]="true">
+    <ion-header>
+      <ion-row>
+        <ion-col> Concierto </ion-col>
+        <ion-col> Artista </ion-col>
+        <ion-col> Fecha de concierto </ion-col>
+        <ion-col> Inicio de ventas </ion-col>
+        <ion-col> </ion-col>
+      </ion-row>
+    </ion-header>
+    <app-assignment-item
+      *ngFor="let assignment of assignmentSvc.assignments$ | async"
+      [assignment]="assignment"
+    />
+  </ion-grid>
+  <ion-fab slot="fixed" horizontal="end" vertical="bottom">
+    <ion-fab-button (click)="onAddAssignmentClick($event)">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+
+<ion-loading
+  [isOpen]="loading"
+  spinner="bubbles"
+  message="Cargando..."
+></ion-loading>

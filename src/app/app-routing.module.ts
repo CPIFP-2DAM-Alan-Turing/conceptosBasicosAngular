@@ -22,7 +22,11 @@ const routes: Routes = [
   {
     path: 'artists',
     loadChildren: () => import('./pages/artists/artists.module').then( m => m.ArtistsPageModule)
+  },  {
+    path: 'assignments',
+    loadChildren: () => import('./pages/assignments/assignments.module').then( m => m.AssignmentsPageModule)
   },
+
 
 ];
 
