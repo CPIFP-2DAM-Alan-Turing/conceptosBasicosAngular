@@ -27,8 +27,9 @@
     {
       "id": 1,
       "fav": true,
+      "name": "Dynamic chart 2022",
       "description": "Dynamic chart 2022 at Hollywood Bowl",
-      "image": "https://images.sk-static.com/images/media/profile_images/events/39741392/huge_avatar",
+      "image": "data:image/png;base64,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",
       "locationType": "Place",
       "addressType": "PostalAddress",
       "addressCountry": "US",
@@ -38,8 +39,7 @@
       "streetAddress": "2301 N. Highland Ave.",
       "latitude": 34.11137,
       "longitude": -118.33624,
-      "locationName": "Hollywood Bowl",
-      "name": "Dynamic chart 2022"
+      "locationName": "Hollywood Bowl"
     },
     {
       "id": 2,
@@ -1119,38 +1119,24 @@
   ],
   "assignments": [
     {
-      "id": 1,
-      "concert_id": 3,
-      "artist_id": 1,
-      "concertDate": "2022-11-19T17:30:00",
-      "ticketSaleDate": "2022-11-15T00:00:00"
-    },
-    {
-      "id": 2,
-      "concert_id": 1,
-      "artist_id": 13,
-      "concertDate": "2022-12-31T10:00:00",
-      "ticketSaleDate": "2022-12-15T10:00:00"
-    },
-    {
       "id": 6,
-      "concert_id": 6,
-      "artist_id": 15,
+      "concert_id": 16,
+      "artist_id": 8,
       "concertDate": "2022-11-04T19:00:00",
-      "ticketSaleDate": "2022-10-15T00:00:00"
+      "ticketSaleDate": "2023-10-15T00:00"
     },
     {
       "id": 7,
-      "concert_id": 5,
-      "artist_id": 6,
+      "concert_id": 12,
+      "artist_id": 14,
       "concertDate": "2022-11-11T17:30:00",
-      "ticketSaleDate": "2022-11-01T00:00:00"
+      "ticketSaleDate": "2023-11-01T00:00"
     },
     {
       "id": 9,
       "concert_id": 7,
       "artist_id": 24,
-      "concertDate": "2022-11-01T17:30:00",
+      "concertDate": "2022-11-02T17:30",
       "ticketSaleDate": "2022-11-01T00:00:00"
     },
     {
@@ -1162,10 +1148,10 @@
     },
     {
       "id": 11,
-      "concert_id": 11,
-      "artist_id": 26,
-      "concertDate": "2022-10-15T17:00:00",
-      "ticketSaleDate": "2022-10-15T00:00:00"
+      "concert_id": 20,
+      "artist_id": 15,
+      "concertDate": "2022-10-02T17:00",
+      "ticketSaleDate": "2023-10-26T00:00"
     },
     {
       "id": 12,

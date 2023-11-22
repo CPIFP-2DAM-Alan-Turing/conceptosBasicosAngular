@@ -6,7 +6,7 @@ import { Assignment } from 'src/app/core/models/assignment.model';
 import { ArtistsService } from 'src/app/core/services/artists.service';
 import { AssignmentsService } from 'src/app/core/services/assignments.service';
 import { ConcertsService } from 'src/app/core/services/concerts.service';
-import { AssignmentDetailComponent } from './assignment-detail/assignment-detail.component';
+import { AssignmentFormComponent } from './components/assignment-form/assignment-form.component';
 
 @Component({
     selector: 'app-assignments',
@@ -49,18 +49,15 @@ export class AssignmentsPage implements OnInit {
     onUpdateClicked(assignment: Assignment) {
         console.log("onUpdateClicked")
         var onDismiss = (info: any) => {
-            console.log(info);
-            switch (info.role) {
-                case 'ok': {
-                    this.assignmentsSvc.updateAssignment(info.data).subscribe(async assignment => {
+            switch (info.data.role) {
+                case 'update': {
+                    this.assignmentsSvc.updateAssignment(info.data.assignment).subscribe(async assignment => {
                         this.showToast("Asignación de concierto y artista modificada", "success")
                     })
                 }
                     break;
                 case 'delete': {
-                    this.assignmentsSvc.deleteAssignment(info.data).subscribe(async assignment => {
-                        this.showToast("Asignación de concierto y artista eliminada", "danger")
-                    })
+                    this.onDeleteClicked(assignment);
                 }
                     break;
                 default: {
@@ -73,7 +70,7 @@ export class AssignmentsPage implements OnInit {
 
     async presentForm(assignment: Assignment | null, onDismiss: (result: any) => void) {
         const modal = await this.modal.create({
-            component: AssignmentDetailComponent,
+            component: AssignmentFormComponent,
             componentProps: {
                 assignment: assignment
             },

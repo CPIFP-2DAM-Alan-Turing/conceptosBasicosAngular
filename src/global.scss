@@ -34,12 +34,6 @@
     transform: translateY(-10px);
 }
 
-.modal-60vw-50vh{
-    --width: 60vw;
-    --height: 50vh;
-    --min-width:500px;
-}
-
 .modal-60vw{
     --width: 60vw;
     --min-width:500px;
@@ -47,5 +41,10 @@
 
 .modal-80vh{
     --height: 80vh;
+    --min-height:300px;
+}
+
+.modal-50vh{
+    --height: 50vh;
     --min-height:300px;
 }

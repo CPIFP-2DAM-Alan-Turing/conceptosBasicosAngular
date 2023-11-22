@@ -181,7 +181,7 @@ export class ArtistsPage implements OnInit, ArtistsInterface {
                     artist: data,
                     assignment: assignment
                 },
-                cssClass: "modal-60vw-50vh"
+                cssClass: "modal-60vw modal-50vh"
             });
             form.present();
             form.onDidDismiss().then(result => {

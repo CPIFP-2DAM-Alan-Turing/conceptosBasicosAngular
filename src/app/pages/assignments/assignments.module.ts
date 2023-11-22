@@ -1,25 +1,19 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
-import { AssignmentsPageRoutingModule } from './assignments-routing.module';
+import { AssignmentItemComponent } from './components/assignment-item/assignment-item.component';
 import { AssignmentsPage } from './assignments.page';
-import { AssignmentItemComponent } from './assignment-item/assignment-item.component';
+import { AssignmentsPageRoutingModule } from './assignments-routing.module';
+import { NgModule } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { AssignmentDetailComponent } from './assignment-detail/assignment-detail.component';
+import { AssignmentFormComponent } from './components/assignment-form/assignment-form.component';
 
 @NgModule({
     imports: [
-        CommonModule,
-        FormsModule,
-        IonicModule,
+        AssignmentsPageRoutingModule,
         SharedModule,
-        AssignmentsPageRoutingModule
     ],
     declarations: [
+        AssignmentFormComponent,
+        AssignmentItemComponent,
         AssignmentsPage,
-        AssignmentDetailComponent,
-        AssignmentItemComponent
     ]
 })
 export class AssignmentsPageModule { }
