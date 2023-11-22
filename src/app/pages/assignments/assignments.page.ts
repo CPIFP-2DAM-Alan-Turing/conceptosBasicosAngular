@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ModalController, ToastController } from '@ionic/angular';
+import { ModalController, ToastController, ToastOptions } from '@ionic/angular';
 import { lastValueFrom } from 'rxjs';
 import { Assignment } from 'src/app/core/models/assignment.model';
 import { ArtistsService } from 'src/app/core/services/artists.service';
 import { AssignmentsService } from 'src/app/core/services/assignments.service';
 import { ConcertsService } from 'src/app/core/services/concerts.service';
+import { AssignmentDetailComponent } from './assignment-detail/assignment-detail.component';
 
 @Component({
     selector: 'app-assignments',
@@ -16,12 +17,12 @@ export class AssignmentsPage implements OnInit {
     public loading = false;
 
     constructor(
-        private form: ModalController,
+        private modal: ModalController,
         private router: Router,
         private toastController: ToastController,
         public artistsSvc: ArtistsService,
         public assignmentsSvc: AssignmentsService,
-        public concertsSvc: ConcertsService,
+        public concertsSvc: ConcertsService
     ) { }
 
     async ngOnInit() {
@@ -45,21 +46,60 @@ export class AssignmentsPage implements OnInit {
 
     }
 
-    onUpdateClicked(data: any) {
-
+    onUpdateClicked(assignment: Assignment) {
+        console.log("onUpdateClicked")
+        var onDismiss = (info: any) => {
+            console.log(info);
+            switch (info.role) {
+                case 'ok': {
+                    this.assignmentsSvc.updateAssignment(info.data).subscribe(async assignment => {
+                        this.showToast("Asignación de concierto y artista modificada", "success")
+                    })
+                }
+                    break;
+                case 'delete': {
+                    this.assignmentsSvc.deleteAssignment(info.data).subscribe(async assignment => {
+                        this.showToast("Asignación de concierto y artista eliminada", "danger")
+                    })
+                }
+                    break;
+                default: {
+                    console.error("No debería entrar");
+                }
+            }
+        }
+        this.presentForm(assignment, onDismiss);
     }
+
+    async presentForm(assignment: Assignment | null, onDismiss: (result: any) => void) {
+        const modal = await this.modal.create({
+            component: AssignmentDetailComponent,
+            componentProps: {
+                assignment: assignment
+            },
+            cssClass: "modal-60vw modal-80vh"
+        });
+        modal.present();
+        modal.onDidDismiss().then(result => {
+            if (result && result.data) {
+                onDismiss(result);
+            }
+        });
+    }
+
+
 
     onDeleteClicked(assignment: Assignment) {
         this.assignmentsSvc.deleteAssignment(assignment.id).subscribe();
-        this.showToast("La asignación ha sido eliminada")
+        this.showToast("La asignación ha sido eliminada", "danger")
     }
 
-    async showToast(_message: string) {
+    async showToast(_message: string, color: string) {
         const toast = await this.toastController.create({
             message: _message,
             duration: 2000,
             position: "bottom",
-            color: "danger"
+            color: color
         });
         toast.present();
     }

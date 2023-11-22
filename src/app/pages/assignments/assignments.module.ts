@@ -6,6 +6,7 @@ import { AssignmentsPageRoutingModule } from './assignments-routing.module';
 import { AssignmentsPage } from './assignments.page';
 import { AssignmentItemComponent } from './assignment-item/assignment-item.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { AssignmentDetailComponent } from './assignment-detail/assignment-detail.component';
 
 @NgModule({
     imports: [
@@ -17,6 +18,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     ],
     declarations: [
         AssignmentsPage,
+        AssignmentDetailComponent,
         AssignmentItemComponent
     ]
 })

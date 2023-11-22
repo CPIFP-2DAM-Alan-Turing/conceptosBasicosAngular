@@ -18,8 +18,8 @@
                 <ion-col> </ion-col>
             </ion-row>
         </ion-header>
-        <app-assignment-item *ngFor="let assignment of assignmentsSvc.assignments$ | async"
-        [assignment]="assignment" (onDeleteClicked)="onDeleteClicked(assignment)"/>
+        <app-assignment-item *ngFor="let assignment of assignmentsSvc.assignments$ | async" [assignment]="assignment"
+            (onDeleteClicked)="onDeleteClicked(assignment)" (onUpdateClicked)="onUpdateClicked(assignment)" />
     </ion-grid>
     <ion-fab slot="fixed" horizontal="end" vertical="bottom">
         <ion-fab-button (click)="onAddAssignmentClick($event)">

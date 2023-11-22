@@ -37,6 +37,8 @@ export class AssignmentItemComponent implements OnInit {
     onUpdateClick(assignment: Assignment | null, event: any) {
         if (assignment) {
             console.log("edit assignment", assignment.id, event);
+            this.onUpdateClicked.emit();
+            event.stopPropagation;
         }
     }
     onDeleteClick(assignment: Assignment | null, event: any) {
