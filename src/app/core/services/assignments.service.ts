@@ -62,6 +62,7 @@ export class AssignmentsService {
      * @returns Observable<Assignment>
      */
     public deleteAssignment(id: number): Observable<void> {
+        console.log("entra")
         return this.http.delete<void>(`${environment.BASE_URL}/assignments/${id}`).pipe(tap(_ => {
             this.getAll().subscribe();
         }));
