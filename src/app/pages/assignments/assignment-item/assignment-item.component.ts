@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ToastController } from '@ionic/angular';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ModalController, ToastController } from '@ionic/angular';
 import { Assignment } from 'src/app/core/models/assignment.model';
 import { AssignmentsService } from 'src/app/core/services/assignments.service';
 
@@ -16,6 +16,8 @@ export class AssignmentItemComponent implements OnInit {
             this._assignment = assignment;
         }
     }
+    @Output() onUpdateClicked: EventEmitter<void> = new EventEmitter<void>;
+    @Output() onDeleteClicked: EventEmitter<void> = new EventEmitter<void>;
 
     get assignment(): Assignment | null {
         return this._assignment;
@@ -23,7 +25,7 @@ export class AssignmentItemComponent implements OnInit {
 
     constructor(
         private assignmentsService: AssignmentsService,
-        private toastController: ToastController
+
     ) {
         console.debug("constructor assignment item component")
     }
@@ -32,22 +34,16 @@ export class AssignmentItemComponent implements OnInit {
         console.debug("init assignment item component")
     }
 
-    onUpdateClick(id: number, event: Event) {
-        console.log("edit assignment", id, event);
+    onUpdateClick(assignment: Assignment | null, event: any) {
+        if (assignment) {
+            console.log("edit assignment", assignment.id, event);
+        }
     }
-    onDeleteClick(id: number, event: Event) {
-        console.log("delete assignment", id, event);
-        this.assignmentsService.deleteAssignment(id).subscribe();
-        this.showToast("La asignación ha sido eliminada")
-    }
-
-    async showToast(_message: string) {
-        const toast = await this.toastController.create({
-            message: _message,
-            duration: 2000,
-            position: "bottom",
-            color: "danger"
-        });
-        toast.present();
+    onDeleteClick(assignment: Assignment | null, event: any) {
+        if (assignment) {
+            console.log("delete assignment", assignment.id, event);
+            this.onDeleteClicked.emit();
+            event.stopPropagation();
+        }
     }
 }

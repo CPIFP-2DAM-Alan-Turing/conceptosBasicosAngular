@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
 import { lastValueFrom } from 'rxjs';
 import { Assignment } from 'src/app/core/models/assignment.model';
 import { ArtistsService } from 'src/app/core/services/artists.service';
@@ -16,16 +16,17 @@ export class AssignmentsPage implements OnInit {
     public loading = false;
 
     constructor(
-        private router: Router,
-        public concertsSvc: ConcertsService,
-        public artistsSvc: ArtistsService,
-        public assignmentSvc: AssignmentsService,
         private form: ModalController,
+        private router: Router,
+        private toastController: ToastController,
+        public artistsSvc: ArtistsService,
+        public assignmentsSvc: AssignmentsService,
+        public concertsSvc: ConcertsService,
     ) { }
 
     async ngOnInit() {
         this.loading = true;
-        await lastValueFrom(this.assignmentSvc.getAll())
+        await lastValueFrom(this.assignmentsSvc.getAll())
             .catch((error: any) => {
                 console.error(error);
             });
@@ -49,7 +50,17 @@ export class AssignmentsPage implements OnInit {
     }
 
     onDeleteClicked(assignment: Assignment) {
-
+        this.assignmentsSvc.deleteAssignment(assignment.id).subscribe();
+        this.showToast("La asignación ha sido eliminada")
     }
 
+    async showToast(_message: string) {
+        const toast = await this.toastController.create({
+            message: _message,
+            duration: 2000,
+            position: "bottom",
+            color: "danger"
+        });
+        toast.present();
+    }
 }

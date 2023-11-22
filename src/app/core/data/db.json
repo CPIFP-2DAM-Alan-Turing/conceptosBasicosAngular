@@ -1133,13 +1133,6 @@
       "ticketSaleDate": "2022-12-15T10:00:00"
     },
     {
-      "id": 5,
-      "concert_id": 9,
-      "artist_id": 8,
-      "concertDate": "2022-10-28T17:30:00",
-      "ticketSaleDate": "2022-10-28T00:00:00"
-    },
-    {
       "id": 6,
       "concert_id": 6,
       "artist_id": 15,

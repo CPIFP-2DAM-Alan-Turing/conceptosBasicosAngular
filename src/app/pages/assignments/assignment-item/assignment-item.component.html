@@ -13,10 +13,10 @@
     </ion-col>
     <ion-col>
         <ion-buttons>
-            <ion-button color="primary" (click)="onUpdateClick(assignment?.id ?? 0, $event)">
+            <ion-button color="primary" (click)="onUpdateClick(assignment, $event)">
                 <ion-icon slot="icon-only" name="pencil-outline"></ion-icon>
             </ion-button>
-            <ion-button color="danger" (click)="onDeleteClick(assignment?.id ?? 0, $event)">
+            <ion-button color="danger" (click)="onDeleteClick(assignment, $event)">
                 <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
             </ion-button>
         </ion-buttons>
