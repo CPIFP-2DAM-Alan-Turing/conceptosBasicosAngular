@@ -1120,7 +1120,7 @@
   "assignments": [
     {
       "id": 6,
-      "concert_id": 16,
+      "concert_id": 3,
       "artist_id": 8,
       "concertDate": "2022-11-04T19:00:00",
       "ticketSaleDate": "2023-10-15T00:00"
@@ -1411,6 +1411,20 @@
       "artist_id": 24,
       "concertDate": "2022-08-31T16:30:00",
       "ticketSaleDate": "2022-11-01T00:00:00"
+    },
+    {
+      "id": 52,
+      "concert_id": 1,
+      "artist_id": 6,
+      "concertDate": "2024-01-01T01:01",
+      "ticketSaleDate": "2024-01-01T01:01"
+    },
+    {
+      "id": 53,
+      "concert_id": 4,
+      "artist_id": 8,
+      "concertDate": "2023-11-12T21:55",
+      "ticketSaleDate": "2023-11-10T18:55"
     }
   ]
 }

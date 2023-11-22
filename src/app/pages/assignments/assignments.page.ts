@@ -43,7 +43,21 @@ export class AssignmentsPage implements OnInit {
     }
 
     onAddAssignmentClick(event: any) {
-
+        console.log("onAddAssignmentClick");
+        let onDismiss = ((info: any) => {
+            if (info.role = "submit") {
+                this.assignmentsSvc.addAssignment(info.data.assignment).subscribe({
+                    next: info => {
+                        console.log("AddConcertClick: " + info);
+                    },
+                    error: err => {
+                        console.error("AddConcertClick: " + err);
+                    }
+                });
+            }
+        })
+        this.presentForm(null, onDismiss);
+        event.stopPropagation();
     }
 
     onUpdateClicked(assignment: Assignment) {
