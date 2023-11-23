@@ -1,4 +1,4 @@
-<ion-item id="popover-button" [button]="!disabled" [detail]="!disabled">
+<ion-item id="popover-concerts-button" [button]="!disabled" [detail]="!disabled">
   <ion-text slot="start" position="fixed"> Concierto: </ion-text>
   <!-- Mostrar la selección -->
   <ion-text *ngIf="!concertSelected && !disabled">
@@ -10,7 +10,7 @@
 
 <ion-popover
   *ngIf="!disabled"
-  trigger="popover-button"
+  trigger="popover-concerts-button"
   #popover
   (willPresent)="onLoadConcerts()"
 >
