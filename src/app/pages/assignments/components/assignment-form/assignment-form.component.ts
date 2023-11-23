@@ -26,7 +26,7 @@ export class AssignmentFormComponent implements OnInit {
 
     constructor(
         private formBuilder: FormBuilder,
-        private _modal:ModalController,
+        private _modal: ModalController,
     ) {
         this.form = this.formBuilder.group({
             assignmentId: this.assignment?.id,
@@ -47,6 +47,7 @@ export class AssignmentFormComponent implements OnInit {
         let _role: string = this.form.value.artistId && !this.form.value.assignmentId ? "create" :
             (!this.form.value.artistId && this.form.value.assignmentId ? "delete" :
                 (this.form.value.artistId && this.form.value.assignmentId ? "update" : ""))
+        console.log(_role)
         let _data = {
             "assignment": {
                 id: this.form.value.assignmentId ?? null,
@@ -57,7 +58,7 @@ export class AssignmentFormComponent implements OnInit {
             },
             role: _role
         }
-        this._modal.dismiss(_data, "submit");
+        this._modal.dismiss(_data, _role);
     }
     onDelete() {
         this._modal.dismiss(this.form.value, 'delete');

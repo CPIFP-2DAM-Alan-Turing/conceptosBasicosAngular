@@ -5,14 +5,6 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 })
 export class ButtonEffectDirective {
 
-    private _color: string = 'transparent';
-
-    @Input() set appHighLight(color: string) {
-        this._color = color;
-    }
-    get appHighLight(): string {
-        return this._color;
-    }
     constructor(private el: ElementRef) {
         this.unsetEffect();
     }

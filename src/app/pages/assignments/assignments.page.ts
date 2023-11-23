@@ -63,15 +63,17 @@ export class AssignmentsPage implements OnInit {
     onUpdateClicked(assignment: Assignment) {
         console.log("onUpdateClicked")
         var onDismiss = (info: any) => {
-            switch (info.data.role) {
+            switch (info.role) {
                 case 'update': {
                     this.assignmentsSvc.updateAssignment(info.data.assignment).subscribe(async assignment => {
                         this.showToast("Asignación de concierto y artista modificada", "success")
                     })
                 }
-                    break;
+                break;
                 case 'delete': {
+                    console.log("onDeleteClicked")
                     this.onDeleteClicked(assignment);
+                    this.showToast("Asignación eliminada", "danger")
                 }
                     break;
                 default: {
